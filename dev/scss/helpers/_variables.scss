@@ -1,0 +1,47 @@
+/****************************************************************************/
+/* COLORS */
+/****************************************************************************/
+$color-primary: #FFC700;
+$color-secondary: #191D24;
+$color-secondary: #191D24;
+$color-light: #FFFFFF;
+$color-dark: #000000;
+$color-primary-dark: #ecb400;
+$color-lighten: #ececec;
+$color-success: #15b500;
+$color-error: #e41924;
+$color-warning: #eb7805;
+/****************************************************************************/
+/* FONTS */
+/****************************************************************************/
+
+$font-primary: Crice, sans-serif;
+$font-secondary: PFDinDisplayPro-, sans-serif;
+
+/****************************************************************************/
+/* BREAKPOINTS */
+/****************************************************************************/
+
+$bp-xs: 320px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1366px;
+$bp-xxl: 1600px;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: $bp-sm,
+	md: $bp-md,
+	lg: $bp-lg,
+	xl: $bp-xl
+);
+$transition_speed: .2s;
+$spacers: (
+	0:0px,
+	1:10px,
+	2:20px,
+	3:30px,
+	4:40px,
+	5:50px,
+);

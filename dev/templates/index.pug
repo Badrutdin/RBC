@@ -1,0 +1,30 @@
+extends ../pug/layout
+append content
+    .container
+        button.c-btn.c-btn_size-md.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        button.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        button.c-btn.c-btn_size-xl.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        button.c-btn.c-btn_size-lg.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        button.c-btn.c-btn_size-xl.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        button.c-btn.c-btn_size-md.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
+        button.c-btn.c-btn_size-lg.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
+        button.c-btn.c-btn_size-xl.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
+        button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
+        button.c-btn.c-btn_size-lg.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
+        button.c-btn.c-btn_size-xl.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
+        button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary
+            +svgSprite({name: 'arrow', calssName: 'c-btn-ico__icon', width: 17, height: 12})
+    .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
+        .c-action-card
+            .c-action-card__body
+                .c-action-card__content
+                    | Аренда офисов
+                    br
+                    | от 10 м2 до 1350 м
+                    sup 2
+                .c-action-card__ctrls
+                    button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper выбрать сейчас
+    .container
+        +newsCard(models.newsCardModel)
+        +cardLink(models.cardLinkModel)

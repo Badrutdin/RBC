@@ -1,0 +1,38 @@
+.iframe-preload {
+}
+
+.iframe-video {
+	iframe {
+		border: 0;
+	}
+}
+
+.iframe-play {
+	cursor: pointer;
+	transition: .3s ease-in-out;
+
+	&:hover, &:focus {
+		svg .iframe-play__button-bg{
+			fill: #f00;
+		}
+		svg{
+			opacity: 1;
+		}
+	}
+
+	svg {
+		opacity: .6;
+		width: 56px;
+		height: 56px;
+		fill: $color-secondary;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	svg .iframe-play__button-bg{
+		fill: black;
+	}
+}

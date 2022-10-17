@@ -1,0 +1,108 @@
+.c-btn {
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  max-width: 100%;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color .2s ease;
+  font-family: $font-secondary;
+  &_size-md{
+    padding: 10px 20px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  &_size-lg{
+    padding: 12px 20px 10px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  &_size-xl{
+    padding: 17px 20px 15px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &_style-bold-upper{
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  &_style-ghost{
+    background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    border-color: currentColor;
+  }
+  &__icon{
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
+
+.c-btn_color-primary.c-btn_style-default{
+  background-color: $color-primary;
+  color: $color-dark;
+  &:hover,&:focus{
+    background-color: $color-primary-dark;
+  }
+}
+.c-btn_color-light.c-btn_style-default{
+  background-color: $color-light;
+  color: $color-dark;
+  &:hover,&:focus{
+    background-color: $color-lighten;
+  }
+}
+.c-btn_color-secondary.c-btn_style-ghost{
+  color: $color-dark;
+}
+.c-btn_color-light.c-btn_style-ghost{
+  color: $color-light;
+}
+.c-btn_color-light.c-btn_style-ghost,.c-btn_color-secondary.c-btn_style-ghost{
+  &:hover,&:focus{
+    background-color: $color-primary-dark;
+  }
+}
+
+.c-btn-ico{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &_md{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  &_color-primary{
+    background-color: $color-primary;
+    color: $color-light;
+  }
+  &__icon{
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
+
+
+
+@media (min-width: $bp-xl) {
+  .c-btn{
+    &_size-md{
+      padding: 12px 25px;
+    }
+  }
+}
+@media (min-width: $bp-xxl) {
+  .c-btn{
+    &_size-md{
+      padding: 20px 40px;
+    }
+  }
+}
