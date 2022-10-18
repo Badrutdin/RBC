@@ -1,4 +1,4 @@
-$padding-container: 15px;
+$padding-container: 12px;
 .row{
 	margin-right: -$padding-container;
 	margin-left: -$padding-container;
@@ -44,31 +44,9 @@ $padding-container: 15px;
 }
 .container {
 	padding: 0 $padding-container  0 $padding-container;
-	max-width: 1464px + ($padding-container * 2);
-}
-
-
-
-
-//@media (min-width: $bp-sm)  {
-//	.container {
-//		max-width: $bp-sm + $padding-container - (32px - $padding-container) * 2;
-//	}
-//}
-//@media (min-width: $bp-md)  {
-//	.container {
-//		max-width: $bp-md + $padding-container - (39px - $padding-container) * 2;
-//	}
-//}
-//@media (min-width: $bp-lg)  {
-//	.container {
-//		max-width: $bp-lg + $padding-container - (59px - $padding-container) * 2;
-//	}
-//}
-.container {
 	max-width: 390px + ($padding-container * 2);
-
 }
+
 @media (min-width: $bp-xl)  {
 	.container {
 		max-width: 1040px + ($padding-container * 2);

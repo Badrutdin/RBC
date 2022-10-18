@@ -1,0 +1,160 @@
+.c-card-news {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .2s ease-in;
+  height: 100%;
+  line-height: 1.2;
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__info {
+    border-top: 1px solid currentColor;
+  }
+
+  &_lg {
+    .c-card-news__body {
+      padding: 20px 15px;
+    }
+
+    .c-card-news__title {
+      font-size: 14px;
+    }
+
+    .c-card-news__info {
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  &_md {
+    .c-card-news__body {
+      padding: 20px 18px;
+    }
+
+    .c-card-news__title {
+      font-size: 12px;
+    }
+
+    .c-card-news__info {
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  &_style-primary {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &_style-secondary {
+    .c-card-news__body {
+      border: 1px solid $color-dark;
+    }
+
+    .c-card-news__photo {
+      height: 162px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+  }
+
+  &_color-light {
+    color: $color-light;
+  }
+
+  &_color-dark {
+    color: $color-dark;
+    background-color: $color-light;
+  }
+
+
+  &:hover, &:focus {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .c-card-news {
+
+    &_lg {
+      .c-card-news__body {
+        padding: 18px 40px;
+      }
+
+      .c-card-news__title {
+        font-size: 18px;
+      }
+
+      .c-card-news__info {
+        padding-top: 15px;
+        margin-top: 28px;
+      }
+    }
+
+    &_md {
+      .c-card-news__title {
+        font-size: 14px;
+      }
+
+      .c-card-news__info {
+        padding-top: 15px;
+        margin-top: 52px;
+      }
+    }
+
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-card-news {
+
+    &_lg {
+      .c-card-news__body {
+        padding: 26px 52px;
+      }
+
+      .c-card-news__title {
+        font-size: 24px;
+      }
+
+      .c-card-news__info {
+        padding-top: 20px;
+        margin-top: 42px;
+      }
+    }
+
+    &_md {
+      .c-card-news__body {
+        padding: 26px 30px;
+      }
+
+      .c-card-news__title {
+        font-size: 18px;
+      }
+
+      .c-card-news__info {
+        padding-top: 20px;
+        margin-top: 80px;
+      }
+    }
+
+    &_style-secondary {
+      .c-card-news__photo {
+        height: 230px;
+      }
+    }
+
+  }
+}

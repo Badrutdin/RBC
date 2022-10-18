@@ -71,164 +71,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.c-card-news {
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow .2s ease-in;
-  height: 100%;
-
-  &__body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-  }
-
-  &:hover, &:focus {
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  }
-
-  &__title {
-    font-weight: 700;
-  }
-
-  &__info {
-    border-top: 1px solid currentColor;
-  }
-
-  &_lg {
-    line-height: 1.2;
-
-    .c-card-news__body {
-      padding: 20px 15px;
-    }
-
-    .c-card-news__title {
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .c-card-news__info {
-      padding-top: 10px;
-      margin-top: 10px;
-    }
-  }
-
-  &_md {
-    line-height: 1.2;
-
-    .c-card-news__body {
-      padding: 20px 18px;
-      border: 1px solid $color-dark;
-    }
-
-    .c-card-news__title {
-      font-weight: 700;
-      font-size: 12px;
-    }
-
-    .c-card-news__info {
-      padding-top: 10px;
-      margin-top: 10px;
-    }
-  }
-
-  &_color-light {
-    color: $color-light;
-  }
-
-  &_color-dark {
-    color: $color-dark;
-    background-color: $color-light;
-  }
-
-  &_style-primary {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  &_style-secondary {
-    justify-content: space-between;
-
-    .c-card-news__photo {
-      height: 162px;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      flex-shrink: 0;
-    }
-  }
-}
-
-@media (min-width: $bp-xl) {
-  .c-card-news {
-
-    &_lg {
-      .c-card-news__body {
-        padding: 18px 40px;
-      }
-
-      .c-card-news__title {
-        font-size: 18px;
-      }
-
-      .c-card-news__info {
-        padding-top: 15px;
-        margin-top: 28px;
-      }
-    }
-    &_md{
-      .c-card-news__info {
-        padding-top: 15px;
-        margin-top: 52px;
-      }
-    }
-
-  }
-}
-
-@media (min-width: $bp-xxl) {
-  .c-card-news {
-
-    &_lg {
-      .c-card-news__body {
-        padding: 26px 52px;
-      }
-
-      .c-card-news__title {
-        font-size: 24px;
-      }
-
-      .c-card-news__info {
-        padding-top: 20px;
-        margin-top: 42px;
-      }
-    }
-
-    &_md {
-      .c-card-news__body {
-        padding: 26px 30px;
-      }
-
-      .c-card-news__title {
-        font-size: 18px;
-      }
-
-      .c-card-news__info {
-        padding-top: 20px;
-        margin-top: 80px;
-      }
-    }
-
-    &_style-secondary {
-      .c-card-news__photo {
-        height: 230px;
-      }
-    }
-
-  }
-}
 
 .c-news-info {
   display: flex;
@@ -330,14 +172,14 @@ body {
 
 .c-card-news-list {
   &__item {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     min-height: 216px;
   }
 }
 
 .c-card-link-list {
   &__item {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     min-height: 216px;
   }
 }
@@ -365,5 +207,84 @@ body {
     &__item {
       min-height: 278px;
     }
+  }
+}
+
+.c-slider-header {
+  align-items: center;
+  &__title {
+    font-size: 32px;
+    line-height: 1.1;
+    color: $color-dark;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__tabs {
+
+  }
+}
+
+@media (min-width: $bp-md) {
+  .c-slider-header {
+    &__title {
+
+    }
+
+    &__nav {
+      order: 1;
+    }
+
+    &__tabs {
+
+    }
+  }
+}
+
+.c-slider-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -7px;
+  margin-left: -7px;
+
+  &__item {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
+.c-tabs-list {
+  display: flex;
+  margin-right: -8px;
+  margin-left: -8px;
+  margin-top: 15px;
+
+  &__item {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.c-tab-item {
+  font-size: 13px;
+  line-height: 1.3;
+  color: $color-dark;
+
+  &:hover, &:focus, &_active {
+    color: $color-primary;
+  }
+}
+
+@media (min-width: $bp-md) {
+  .c-tab-item {
+    font-size: 15px;
+  }
+}
+@media (min-width: $bp-xxl) {
+  .c-tab-item {
+    font-size: 20px;
   }
 }
