@@ -3,26 +3,7 @@ append content
     .container
         .c-section.c-section_lg
             .c-section__header
-                .row.c-slider-header
-                    .col-6.col-md-12.c-slider-header__title Новости
-                    .col-6.col-md-2.c-slider-header__nav
-                        .c-slider-nav
-                            .c-slider-nav__item
-                                button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary.c-btn-ico_prev
-                                    +svgSprite({name: 'arrow', className: 'c-btn-ico__icon', width: 17, height: 12})
-                            .c-slider-nav__item
-                                button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary
-                                    +svgSprite({name: 'arrow', className: 'c-btn-ico__icon', width: 17, height: 12})
-                    .col-12.col-md-10.c-slider-header__tabs
-                        .c-tabs-list
-                            .c-tabs-list__item
-                                a.c-tab-item(href="#") ВСЕ
-                            .c-tabs-list__item
-                                a.c-tab-item(href="#") от РДЦ
-                            .c-tabs-list__item
-                                a.c-tab-item(href="#") Новости арендаторов
-                            .c-tabs-list__item
-                                a.c-tab-item(href="#") СМИ о нас
+                +sliderHeader({title: 'Новости', tabListItems: models.tabListModel})
             .row.c-card-news-list
                 .col-12.col-md-6.c-card-news-list__item
                     +newsCardPrimary(models.newsCardModel)
@@ -47,18 +28,3 @@ append content
                     +cardLink(models.cardLinkModel)
                 .col-12.col-md-6.col-lg-4.c-card-link-list__item
                     +cardLink(models.cardLinkModel)
-
-        //button.c-btn.c-btn_size-md.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
-        //button.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
-        //button.c-btn.c-btn_size-xl.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
-        //button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
-        //button.c-btn.c-btn_size-lg.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
-        //button.c-btn.c-btn_size-xl.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
-        //button.c-btn.c-btn_size-md.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
-        //button.c-btn.c-btn_size-lg.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
-        //button.c-btn.c-btn_size-xl.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
-        //button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
-        //button.c-btn.c-btn_size-lg.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
-        //button.c-btn.c-btn_size-xl.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
-        //button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary
-        //    +svgSprite({name: 'arrow', calssName: 'c-btn-ico__icon', width: 17, height: 12})

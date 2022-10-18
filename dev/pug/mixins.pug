@@ -33,6 +33,7 @@ mixin newsCardPrimary(newsCardModel)
             .c-card-news__title=newsCardModel.title
             .c-card-news__info
                 +newsInfo(newsCardModel.info)
+
 mixin newsCardSecondary(newsCardModel)
     a.c-card-news.c-card-news_md.c-card-news_color-dark.c-card-news_style-secondary(href=newsCardModel.href)
         .c-card-news__photo(style="background-image:url(" + newsCardModel.img + ")")
@@ -60,3 +61,40 @@ mixin actionCard(data)
             .c-action-card__content !{data.text}
             .c-action-card__ctrls
                 button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper=data.btnText
+
+mixin tabList(tabListModel)
+    .c-tab-list
+        for item in tabListModel
+            .c-tab-list__item
+                a.c-tab-item(href=item.href)=item.text
+
+mixin sliderNavPrimary()
+    .c-slider-nav
+        .c-slider-nav__item
+            button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary.c-btn-ico_prev
+                +svgSprite({name: 'arrow', className: 'c-btn-ico__icon', width: 17, height: 12})
+        .c-slider-nav__item
+            button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary
+                +svgSprite({name: 'arrow', className: 'c-btn-ico__icon', width: 17, height: 12})
+        //button.c-btn.c-btn_size-md.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        //button.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        //button.c-btn.c-btn_size-xl.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        //button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        //button.c-btn.c-btn_size-lg.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        //button.c-btn.c-btn_size-xl.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper перезвоните мне
+        //button.c-btn.c-btn_size-md.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
+        //button.c-btn.c-btn_size-lg.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
+        //button.c-btn.c-btn_size-xl.c-btn_color-secondary.c-btn_style-ghost.c-btn_style-bold-upper РАспечатать планировку
+        //button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
+        //button.c-btn.c-btn_size-lg.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
+        //button.c-btn.c-btn_size-xl.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
+        //button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary
+        //    +svgSprite({name: 'arrow', calssName: 'c-btn-ico__icon', width: 17, height: 12})
+
+mixin sliderHeader(data)
+    .row.c-slider-header
+        .col-6.col-md-12.c-slider-header__title=data.title
+        .col-6.col-md-2.c-slider-header__nav
+            +sliderNavPrimary()
+        .col-12.col-md-10.c-slider-header__tabs
+            +tabList(data.tabListItems)
