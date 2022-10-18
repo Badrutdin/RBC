@@ -16,15 +16,21 @@ append content
         button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary
             +svgSprite({name: 'arrow', calssName: 'c-btn-ico__icon', width: 17, height: 12})
     .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
-        .c-action-card
-            .c-action-card__body
-                .c-action-card__content
-                    | Аренда офисов
-                    br
-                    | от 10 м2 до 1350 м
-                    sup 2
-                .c-action-card__ctrls
-                    button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper выбрать сейчас
+        +actionCard({text:'Аренда офисов <br> от 10 м2 до 1350 м <sup>2</sup>', btnText: 'выбрать сейчас'})
     .container
-        +newsCard(models.newsCardModel)
-        +cardLink(models.cardLinkModel)
+        .row.c-card-news-list
+            .col-12.col-md-6.c-card-news-list__item
+                +newsCardPrimary(models.newsCardModel)
+            .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                +newsCardSecondary(models.newsCardModel)
+            .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                +newsCardSecondary(models.newsCardModel)
+        .row.c-card-link-list
+            .col-12.col-md-6.col-lg-4.c-card-link-list__item
+                +cardLink(models.cardLinkModel)
+            .col-12.col-md-6.col-lg-4.c-card-link-list__item
+                +cardLink(models.cardLinkModel)
+            .col-12.col-md-6.col-lg-4.c-card-link-list__item
+                +cardLink(models.cardLinkModel)
+            .col-12.col-md-6.col-lg-4.c-card-link-list__item
+                +cardLink(models.cardLinkModel)

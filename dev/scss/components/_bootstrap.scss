@@ -65,7 +65,17 @@ $padding-container: 15px;
 //		max-width: $bp-lg + $padding-container - (59px - $padding-container) * 2;
 //	}
 //}
+.container {
+	max-width: 390px + ($padding-container * 2);
+
+}
 @media (min-width: $bp-xl)  {
+	.container {
+		max-width: 1040px + ($padding-container * 2);
+
+	}
+}
+@media (min-width: $bp-xxl)  {
 	.container {
 		max-width: 1464px + ($padding-container * 2);
 

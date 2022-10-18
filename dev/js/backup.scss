@@ -1,7 +1,10 @@
-
 body {
   font-family: $font-primary, sans-serif;
   font-weight: 400;
+  /*TODO
+     удалить
+  */
+  background-color: #aecfe1;
 }
 
 .c-action-card {
@@ -72,17 +75,10 @@ body {
 }
 
 .c-card-news {
+  height: 100%;
   display: flex;
   flex-direction: column;
   transition: box-shadow .2s ease-in;
-  height: 100%;
-
-  &__body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-  }
 
   &:hover, &:focus {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -100,7 +96,7 @@ body {
     line-height: 1.2;
 
     .c-card-news__body {
-      padding: 20px 15px;
+      padding: 124px 15px 20px;
     }
 
     .c-card-news__title {
@@ -118,18 +114,17 @@ body {
     line-height: 1.2;
 
     .c-card-news__body {
-      padding: 20px 18px;
-      border: 1px solid $color-dark;
+      padding: 28px 20px 18px;
     }
 
     .c-card-news__title {
       font-weight: 700;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     .c-card-news__info {
-      padding-top: 10px;
-      margin-top: 10px;
+      padding-top: 15px;
+      margin-top: 52px;
     }
   }
 
@@ -143,6 +138,7 @@ body {
   }
 
   &_style-primary {
+    justify-content: flex-end;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -156,7 +152,10 @@ body {
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      flex-shrink: 0;
+
+      &__img {
+        width: 100%;
+      }
     }
   }
 }
@@ -166,22 +165,16 @@ body {
 
     &_lg {
       .c-card-news__body {
-        padding: 18px 40px;
+        padding: 224px 38px 18px;
       }
 
-      .c-card-news__title {
+      &__title {
         font-size: 18px;
       }
 
-      .c-card-news__info {
+      &__info {
         padding-top: 15px;
         margin-top: 28px;
-      }
-    }
-    &_md{
-      .c-card-news__info {
-        padding-top: 15px;
-        margin-top: 52px;
       }
     }
 
@@ -193,14 +186,14 @@ body {
 
     &_lg {
       .c-card-news__body {
-        padding: 26px 52px;
+        padding: 314px 55px 26px;
       }
 
-      .c-card-news__title {
+      &__title {
         font-size: 24px;
       }
 
-      .c-card-news__info {
+      &__info {
         padding-top: 20px;
         margin-top: 42px;
       }
@@ -208,16 +201,16 @@ body {
 
     &_md {
       .c-card-news__body {
-        padding: 26px 30px;
+        padding: 40px 30px 26px;
       }
 
-      .c-card-news__title {
-        font-size: 18px;
+      &__title {
+        font-size: 24px;
       }
 
-      .c-card-news__info {
+      &__info {
         padding-top: 20px;
-        margin-top: 80px;
+        margin-top: 42px;
       }
     }
 
@@ -232,7 +225,6 @@ body {
 
 .c-news-info {
   display: flex;
-  flex-wrap: wrap;
   margin-right: -17px;
   margin-left: -17px;
 
@@ -284,14 +276,10 @@ body {
 }
 
 .c-card-link {
-  padding: 20px 15px;
   line-height: 1.4;
   color: $color-light;
   height: 100%;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  display: block;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -299,6 +287,10 @@ body {
 
   &:hover, &:focus {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  &__body {
+    padding: 180px 15px 20px;
   }
 
   &__title {
@@ -309,8 +301,9 @@ body {
 
 @media (min-width: $bp-xl) {
   .c-card-link {
-    padding: 20px;
-
+    &__body {
+      padding: 138px 20px 18px;
+    }
     &__title {
       font-size: 15px;
     }
@@ -321,6 +314,7 @@ body {
 @media (min-width: $bp-xxl) {
   .c-card-link {
     padding: 20px 30px;
+    height: 280px;
 
     &__title {
       font-size: 18px;
@@ -328,42 +322,8 @@ body {
   }
 }
 
-.c-card-news-list {
+.c-card-list {
   &__item {
     margin-bottom: 10px;
-    min-height: 216px;
-  }
-}
-
-.c-card-link-list {
-  &__item {
-    margin-bottom: 10px;
-    min-height: 216px;
-  }
-}
-
-@media (min-width: $bp-sm) {
-  .c-card-news-list {
-    &__item {
-      min-height: 342px;
-    }
-  }
-  .c-card-link-list {
-    &__item {
-      min-height: 198px;
-    }
-  }
-}
-
-@media (min-width: $bp-xxl) {
-  .c-card-news-list {
-    &__item {
-      min-height: 482px;
-    }
-  }
-  .c-card-link-list {
-    &__item {
-      min-height: 278px;
-    }
   }
 }

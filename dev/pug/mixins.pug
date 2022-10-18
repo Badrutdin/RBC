@@ -27,9 +27,17 @@ mixin svgSprite(data)
     svg(class=data.className fill='none' height=data.height width=data.width xmlns='http://www.w3.org/2000/svg')
         use(xlink:href='images/svg.svg#' + data.name  xmlns='http://www.w3.org/1999/xlink')
 
-mixin newsCard(newsCardModel)
-    a.c-card-news(style="background-image:url(" + newsCardModel.img + ")", href=newsCardModel.href)
+mixin newsCardPrimary(newsCardModel)
+    a.c-card-news.c-card-news_lg.c-card-news_color-light.c-card-news_style-primary(style="background-image:url(" + newsCardModel.img + ")", href=newsCardModel.href)
         .c-card-news__body
+            .c-card-news__title=newsCardModel.title
+            .c-card-news__info
+                +newsInfo(newsCardModel.info)
+mixin newsCardSecondary(newsCardModel)
+    a.c-card-news.c-card-news_md.c-card-news_color-dark.c-card-news_style-secondary(href=newsCardModel.href)
+        .c-card-news__photo(style="background-image:url(" + newsCardModel.img + ")")
+        .c-card-news__body
+            .decor
             .c-card-news__title=newsCardModel.title
             .c-card-news__info
                 +newsInfo(newsCardModel.info)
@@ -46,3 +54,9 @@ mixin cardLink(cardLinkModel)
         .c-card-link__body
             .c-card-link__title=cardLinkModel.title
 
+mixin actionCard(data)
+    .c-action-card
+        .c-action-card__body
+            .c-action-card__content !{data.text}
+            .c-action-card__ctrls
+                button.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper=data.btnText
