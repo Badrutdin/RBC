@@ -15,19 +15,22 @@
   font-family: $font-secondary;
 
   &_size-md {
-    padding: 10px 20px;
+    padding: 0 20px;
     font-size: 11px;
+    min-height: 32px;
     line-height: 1.4;
   }
 
   &_size-lg {
-    padding: 12px 20px 10px;
-    font-size: 13px;
+    padding: 0 20px;
+    min-height: 36px;
+    font-size: 11px;
     line-height: 1.4;
   }
 
   &_size-xl {
-    padding: 17px 20px 15px;
+    padding: 0 20px;
+    min-height: 52px;
     font-size: 14px;
     line-height: 1.4;
   }
@@ -118,7 +121,19 @@
 @media (min-width: $bp-xl) {
   .c-btn {
     &_size-md {
-      padding: 12px 25px;
+      min-height: 44px;
+      padding: 0 25px;
+      font-size: 12px;
+    }
+    &_size-lg {
+      min-height: 44px;
+      padding: 0 25px;
+      font-size: 12px;
+    }
+    &_size-xl {
+      min-height: 44px;
+      padding: 0 25px;
+      font-size: 16px;
     }
   }
 }
@@ -126,7 +141,18 @@
 @media (min-width: $bp-xxl) {
   .c-btn {
     &_size-md {
-      padding: 20px 40px;
+      min-height: 60px;
+      padding: 0 40px;
+      font-size: 16px;
+    }
+    &_size-lg {
+      min-height: 60px;
+      padding: 0 40px;
+      font-size: 16px;
+    }
+    &_size-xl {
+      min-height: 60px;
+      padding: 0 40px;
     }
   }
 }

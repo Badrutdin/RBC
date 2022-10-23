@@ -10,17 +10,23 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    position: relative;
   }
 
   &__title {
     font-weight: 700;
   }
 
-  &__info {
-    border-top: 1px solid currentColor;
+  .c-card-news__photo {
+    background-color: #ccc;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
-
   &_lg {
+    .c-card-news__info{
+      border-top: 1px solid currentColor;
+    }
     .c-card-news__body {
       padding: 20px 15px;
     }
@@ -36,6 +42,20 @@
   }
 
   &_md {
+    .c-card-news__info:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      border-top: 1px solid currentColor;
+      width: 100%;
+    }
+    .c-card-news__info {
+      padding-top: 20px;
+      margin-top: auto;
+      position: relative;
+    }
     .c-card-news__body {
       padding: 20px 18px;
     }
@@ -43,19 +63,21 @@
     .c-card-news__title {
       font-size: 12px;
     }
-
-    .c-card-news__info {
-      padding-top: 10px;
-      margin-top: 10px;
-    }
   }
 
   &_style-primary {
+    position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    .c-card-news__photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
   }
-
   &_style-secondary {
     .c-card-news__body {
       border: 1px solid $color-dark;
@@ -63,9 +85,6 @@
 
     .c-card-news__photo {
       height: 162px;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
       flex-shrink: 0;
     }
   }
@@ -107,10 +126,12 @@
       .c-card-news__title {
         font-size: 14px;
       }
-
+      .c-card-news__info:before {
+        top: 15px;
+      }
       .c-card-news__info {
-        padding-top: 15px;
-        margin-top: 52px;
+        padding-top: 30px;
+        //margin-top: 52px;
       }
     }
 
@@ -143,10 +164,12 @@
       .c-card-news__title {
         font-size: 18px;
       }
-
+      .c-card-news__info:before {
+        top: 20px;
+      }
       .c-card-news__info {
-        padding-top: 20px;
-        margin-top: 80px;
+        padding-top: 40px;
+        //margin-top: 80px;
       }
     }
 
@@ -155,7 +178,6 @@
         height: 230px;
       }
     }
-
   }
 }
 
@@ -172,6 +194,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #ccc;
   transition: box-shadow .2s ease-in;
 
   &:hover, &:focus {

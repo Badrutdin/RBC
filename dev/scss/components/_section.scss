@@ -1,7 +1,7 @@
 .c-section{
   &_lg{
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     .c-section__header{
       margin-bottom: 15px;
     }
@@ -10,8 +10,10 @@
 
 @media (min-width: $bp-md) {
   .c-section{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    &_lg{
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
     &_lg{
       .c-section__header{
         margin-bottom: 25px;
