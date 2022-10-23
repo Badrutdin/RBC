@@ -1,92 +1,87 @@
-function counterHandler($input, $plus, $minus, min = 1, max = 99, step = 1) {
-    $plus.on('click', function () {
-        const curentValue = parseInt($input.val())
-        const nextValue = parseInt(curentValue + step)
-        if (nextValue <= max) {
-            $input.val(nextValue)
-            $input.trigger('change')
-        }
-    })
-    $minus.on('click', function () {
-        const curentValue = parseInt($input.val())
-        const nextValue = parseInt(curentValue - step)
-        if (nextValue >= min) {
-            $input.val(nextValue)
-            $input.trigger('change')
-        }
-    })
-}
-
-function replaceInputValue(value, $targetInput) {
-    $targetInput.val(value)
-}
-
 $(document).ready(function () {
+    // variables and constants
+
     const $menuHandler = $('[data-menu-handler]')
     const $menu = $('[data-open]')
+    const $slider = $('.slider')
+    const breakPoints = {
+        xs: 320,
+        sm: 640,
+        md: 768,
+        lg: 1024,
+        xl: 1366,
+        xxl: 1600,
+        xxxl: 1920,
+        endPoint: 9999
+    }
+    const slideSecondaryClasses = 'c-card-news_md c-card-news_color-dark c-card-news_style-secondary';
+    const slidePrimaryClasses = 'c-card-news_lg c-card-news_color-light c-card-news_style-primary';
+    const nextArrowPrimary = `<div class="c-slider-nav__item"><button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="images/svg.svg#arrow" xmlns="http://www.w3.org/1999/xlink"></use>
+                                    </svg></button></div>`;
+    const nextArrowSecondary = `<div class="c-slider-nav__item"><button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary c-btn-ico_prev" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="images/svg.svg#arrow" xmlns="http://www.w3.org/1999/xlink"></use>
+                                    </svg></button></div>`;
+
+
+    // bind actions
     $menuHandler.on('click', function () {
-        if ($menu.attr('data-open') == 'opened') {
+        if ($menu.attr('data-open') === 'opened') {
             $menu.attr('data-open', 'closed')
-        } else if ($menu.attr('data-open') == 'closed') {
+        } else if ($menu.attr('data-open') === 'closed') {
             $menu.attr('data-open', 'opened')
         }
     })
-    const $slider = $('.slider')
-    const slideSecondaryClasses = 'c-card-news_md c-card-news_color-dark c-card-news_style-secondary'
-    const slidePrimaryClasses = 'c-card-news_lg c-card-news_color-light c-card-news_style-primary'
+
     $slider.on('init', function (event, slick) {
         const viewWidth = window.innerWidth
         const $parent = $(event.currentTarget.closest('.slider-container'))
-        if (viewWidth >= 768) {
+        if (viewWidth >= breakPoints.md) {
             $parent.addClass('container')
         }
-        if (viewWidth >= 1366) {
+        if (viewWidth >= breakPoints.xl) {
             changeSlidesView(slick.$slides, slidePrimaryClasses, slideSecondaryClasses)
         }
     })
+
     $slider.slick({
         variableWidth: true,
-        nextArrow: `<div class="c-slider-nav__item"><button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="images/svg.svg#arrow" xmlns="http://www.w3.org/1999/xlink"></use>
-                                    </svg></button></div>`,
-        prevArrow: `<div class="c-slider-nav__item"><button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary c-btn-ico_prev" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
-                                        <use xlink:href="images/svg.svg#arrow" xmlns="http://www.w3.org/1999/xlink"></use>
-                                    </svg></button></div>`,
+        nextArrow: nextArrowPrimary,
+        prevArrow: nextArrowSecondary,
         appendArrows: $('.c-slider-nav'),
         responsive: [{
-            breakpoint: 10000,
+            breakpoint: breakPoints.endPoint,
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
             }
         }, {
-            breakpoint: 1920,
+            breakpoint: breakPoints.xxxl,
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
             }
         }, {
-            breakpoint: 1366,
+            breakpoint: breakPoints.xl,
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                centerMode:true
+                centerMode: true
 
             }
-
         }, {
-            breakpoint: 768,
+            breakpoint: breakPoints.md,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                centerMode:true
+                centerMode: true
             }
         }, {
-            breakpoint: 640,
+            breakpoint: breakPoints.sm,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                centerMode:true
+                centerMode: true
             }
         }]
     });
@@ -94,19 +89,21 @@ $(document).ready(function () {
     $slider.on('breakpoint', function (event, slick, breakpoint) {
         const $parent = $(event.currentTarget.closest('.slider-container'))
         console.log(breakpoint)
-        if (breakpoint > 769) {
+        if (breakpoint > breakPoints.md + 1) {
             $parent.addClass('container')
         } else {
             $parent.removeClass('container')
         }
-
-        if (breakpoint > 1367) {
+        if (breakpoint > breakPoints.xl + 1) {
             changeSlidesView(slick.$slides, slidePrimaryClasses, slideSecondaryClasses)
         } else {
             resetSlidesView(slick.$slides, slidePrimaryClasses, slideSecondaryClasses)
         }
     });
 });
+
+
+// functions
 
 function changeSlidesView(slides, slidePrimaryClasses, slideSecondaryClasses) {
     for (let i = 0; i < slides.length; i = i + 3) {
@@ -126,4 +123,3 @@ function resetSlidesView(slides, slidePrimaryClasses, slideSecondaryClasses) {
             .addClass(slidePrimaryClasses)
     }
 }
-
