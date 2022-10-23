@@ -4,19 +4,26 @@ append content
         .container
             .c-section__header
                 +sliderHeader({title: 'Новости', tabListItems: models.tabListModel})
-            .row.c-card-news-list
-                .col-12.col-md-6.c-card-news-list__item
-                    +newsCardSecondary(models.newsCardModel)
-                .col-12.col-md-6.col-lg-3.c-card-news-list__item
-                    +newsCardSecondary(models.newsCardModel)
-                .col-12.col-md-6.col-lg-3.c-card-news-list__item
-                    +newsCardSecondary(models.newsCardModel)
-                .col-12.col-md-6.c-card-news-list__item
+        .slider-container
+            .c-card-news-list.slider
+                .c-card-news-list__item
                     +newsCardPrimary(models.newsCardModel)
-                .col-12.col-md-6.col-lg-3.c-card-news-list__item
-                    +newsCardSecondary(models.newsCardModel)
-                .col-12.col-md-6.col-lg-3.c-card-news-list__item
-                    +newsCardSecondary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
     .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
         +actionCard({text: 'Аренда офисов <br> от 10 м2 до 1350 м <sup>2</sup>', btnText: 'выбрать сейчас'})
     .c-section.c-section_lg
@@ -34,7 +41,7 @@ append content
                     +cardLink(models.cardLinkModel)
                 .col-12.col-md-6.col-lg-4.c-card-link-list__item
                     +cardLink(models.cardLinkModel)
-
+    .arrows
     button.c-btn.c-btn_size-md.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper(type='button') перезвоните мне
     button.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper(type='button') перезвоните мне
     button.c-btn.c-btn_size-xl.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper(type='button') перезвоните мне
