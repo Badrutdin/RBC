@@ -32,6 +32,7 @@ mixin newsCardPrimary(newsCardModel)
     a.c-card-news.c-card-news_lg.c-card-news_color-light.c-card-news_style-primary(href=newsCardModel.href)
         .c-card-news__photo(style="background-image:url(" + newsCardModel.img + ")")
         .c-card-news__body
+            .c-card-news__decor
             .c-card-news__title=newsCardModel.title
             .c-card-news__info
                 +newsInfo(newsCardModel.info)
@@ -40,6 +41,7 @@ mixin newsCardSecondary(newsCardModel)
     a.c-card-news.c-card-news_md.c-card-news_color-dark.c-card-news_style-secondary(href=newsCardModel.href)
         .c-card-news__photo(style="background-image:url(" + newsCardModel.img + ")")
         .c-card-news__body
+            .c-card-news__decor
             .c-card-news__title=newsCardModel.title
             .c-card-news__info
                 +newsInfo(newsCardModel.info)
@@ -53,6 +55,7 @@ mixin newsInfo(newsInfoModel)
 
 mixin cardLink(cardLinkModel)
     a.c-card-link(style="background-image:url(" + cardLinkModel.img + ")", href=cardLinkModel.href)
+        .c-card-link__decor
         .c-card-link__body
             .c-card-link__title=cardLinkModel.title
 

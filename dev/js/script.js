@@ -70,6 +70,8 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
+                centerMode:true
+
             }
 
         }, {
@@ -77,12 +79,14 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
+                centerMode:true
             }
         }, {
             breakpoint: 640,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
+                centerMode:true
             }
         }]
     });
