@@ -3,10 +3,14 @@
   &__body {
     justify-content: space-between;
     position: relative;
+    align-items: center;
     background-color: #000;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   &__first {
+    margin-bottom: 15px;
     min-height: 30px;
     display: flex;
     justify-content: space-between;
@@ -58,8 +62,16 @@
 
 @media (min-width: $bp-lg) {
   .c-header {
+    &__body {
+      background-color: transparent;
+    }
+
     &__menu {
       position: static;
+    }
+
+    &__first {
+      margin-bottom: 0;
     }
 
     &__menu[data-open="closed"] {
