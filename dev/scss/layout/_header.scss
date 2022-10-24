@@ -1,12 +1,24 @@
-
 .c-header {
+  z-index: 10;
+  background-color: #000;
+  position: relative;
+
+  &__item {
+    width: 100%;
+  }
+
   &__body {
     justify-content: space-between;
     position: relative;
     align-items: center;
-    background-color: #000;
     padding-top: 15px;
     padding-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__first, &__menu, &__contacts {
+    max-width: 100%;
   }
 
   &__first {
@@ -14,12 +26,9 @@
     min-height: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
-  &__logo {
-    width: 202px;
-    max-width: 100%;
-  }
 
   &__menu-handler {
     color: $color-dark;
@@ -36,8 +45,15 @@
   &__menu {
     min-height: 30px;
     position: absolute;
-    background-color: $color-primary;
     top: 100%;
+    left: 0;
+    right: 0;
+    padding: 25px 15px;
+    background-color: $color-primary;
+
+    .c-btn_link.c-btn_color-primary {
+      color: $color-dark;
+    }
   }
 
   &__contacts {
@@ -60,18 +76,28 @@
   }
 }
 
-@media (min-width: $bp-lg) {
+@media (min-width: $bp-xl) {
   .c-header {
-    &__body {
-      background-color: transparent;
+    &__item {
+      width: auto;
     }
+
+    background-color: transparent;
 
     &__menu {
       position: static;
+      width: 360px;
+      background-color: transparent;
+      padding: 0;
+
+      .c-btn_link.c-btn_color-primary {
+        color: $color-light;
+      }
     }
 
     &__first {
       margin-bottom: 0;
+      width: 308px;
     }
 
     &__menu[data-open="closed"] {
@@ -80,10 +106,14 @@
 
     &__contacts {
       height: 41px;
+      width: 320px;
     }
 
     &__geo {
       width: 174px;
+    }
+    .c-menu__link:hover, .c-menu__link:focus {
+      color: $color-primary;
     }
   }
 }
@@ -97,5 +127,36 @@
     &__geo {
       width: 245px;
     }
+
+    &__menu {
+      width: 550px;
+    }
+
+    &__first {
+      width: 432px;
+    }
+
+    &__contacts {
+      width: 450px;
+    }
+  }
+}
+
+.c-logo {
+  max-width: 100%;
+  width: 234px;
+}
+
+@media (min-width: $bp-xl) {
+
+  .c-logo {
+    width: 228px;
+  }
+}
+
+@media (min-width: $bp-xxl) {
+
+  .c-logo {
+    width: 320px;
   }
 }

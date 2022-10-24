@@ -1,13 +1,25 @@
 header.c-header
     .container
-        .row.c-header__body
-            .col-12.col-lg-4.c-header__first
-                .c-header__logo
-                    img(src="images/logo.png")
-                .c-header__menu-handler
-                    button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary(data-menu-handler)
-                        +svgSprite({name: 'burger', className: 'c-btn-ico__icon', width: 13, height: 12})
-            .col-12.col-lg-auto.c-header__menu(data-open='closed') MENU
-            .col-12.col-lg-4.c-header__contacts
-                button.c-header__geo.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
-                a.c-header__phone +7 (846) 372-72-72
+        .c-header__body
+            .c-header__item
+                .c-header__first
+                    .c-header__logo
+                        img.c-logo(src="images/logo.png")
+                    .c-header__menu-handler
+                        button.c-btn-ico.c-btn-ico_md.c-btn-ico_color-primary(data-menu-handler)
+                            +svgSprite({name: 'burger', className: 'c-btn-ico__icon', width: 13, height: 12})
+            .c-header__item
+                .c-header__menu(data-open='closed')
+                    ul.row.c-menu
+                        li.c-menu__item.col-6.col-xl-auto
+                            a.c-btn.c-btn_link.c-btn_color-primary.c-menu__link(href='#') Новости
+                        li.c-menu__item.col-6.col-xl-auto
+                            a.c-btn.c-btn_link.c-btn_color-primary.c-menu__link(href='#') Наши арендаторы
+                        li.c-menu__item.col-6.col-xl-auto
+                            a.c-btn.c-btn_link.c-btn_color-primary.c-menu__link(href='#') Аренда офисов
+                        li.c-menu__item.col-6.col-xl-auto
+                            a.c-btn.c-btn_link.c-btn_color-primary.c-menu__link(href='#') Контакты
+            .c-header__item
+                .c-header__contacts
+                    button.c-header__geo.c-btn.c-btn_size-md.c-btn_color-light.c-btn_style-ghost Московское шоссе, 41
+                    a.c-header__phone +7 (846) 372-72-72
