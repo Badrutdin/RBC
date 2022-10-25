@@ -5,6 +5,7 @@
 
   &__item {
     width: 100%;
+    flex-grow: 1;
   }
 
   &__body {
@@ -17,11 +18,11 @@
     flex-wrap: wrap;
   }
 
-  &__first, &__menu, &__contacts {
+  &__logo-wrap, &__menu, &__contacts {
     max-width: 100%;
   }
 
-  &__first {
+  &__logo-wrap {
     margin-bottom: 15px;
     min-height: 30px;
     display: flex;
@@ -29,20 +30,23 @@
     align-items: center;
   }
 
-
+&__menu{
+  display: flex;
+  align-items: center;
+}
   &__menu-handler {
     color: $color-dark;
   }
 
-  &__menu[data-open="closed"] {
+  .c-top-menu[data-open="closed"] {
     display: none;
   }
 
-  &__menu[data-open="opened"] {
-    display: block;
+  .c-top-menu[data-open="opened"] {
+    display: flex;
   }
 
-  &__menu {
+  .c-top-menu {
     min-height: 30px;
     position: absolute;
     top: 100%;
@@ -51,7 +55,7 @@
     padding: 25px 15px;
     background-color: $color-primary;
 
-    .c-btn_link.c-btn_color-primary {
+    .c-menu__link {
       color: $color-dark;
     }
   }
@@ -62,56 +66,67 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: $color-light;
   }
 
   &__geo {
-    width: 162px;
+    //width: 162px;
     display: inline-flex;
   }
 
   &__phone {
     display: inline-flex;
     font-size: 12px;
-    color: $color-light;
   }
 }
 
 @media (min-width: $bp-xl) {
   .c-header {
+    .c-top-menu[data-open="closed"] {
+      display: flex;
+    }
+    &__menu-handler {
+      margin-right: 10px;
+    }
     &__item {
       width: auto;
     }
 
+    &__phone {
+      font-size: 13px;
+    }
+
     background-color: transparent;
 
-    &__menu {
+    .c-top-menu {
       position: static;
-      width: 360px;
+      //width: 360px;
       background-color: transparent;
       padding: 0;
 
-      .c-btn_link.c-btn_color-primary {
+      .c-menu__link {
         color: $color-light;
       }
     }
 
-    &__first {
+    &__logo-wrap {
       margin-bottom: 0;
-      width: 308px;
+      //width: 308px;
     }
 
-    &__menu[data-open="closed"] {
-      display: block;
+    .c-top-menu[data-open="closed"] {
+      display: flex;
     }
 
     &__contacts {
       height: 41px;
-      width: 320px;
+      //width: 320px;
     }
 
     &__geo {
-      width: 174px;
+      //width: 174px;
     }
+
     .c-menu__link:hover, .c-menu__link:focus {
       color: $color-primary;
     }
@@ -120,24 +135,30 @@
 
 @media (min-width: $bp-xxl) {
   .c-header {
-    &__contacts {
+    &__menu-handler {
+      margin-right: 20px;
+    }
+    &__phone {
+      font-size: 18px;
+    }
+      &__contacts {
       height: 58px;
     }
 
     &__geo {
-      width: 245px;
+      //width: 245px;
     }
 
     &__menu {
-      width: 550px;
+      //width: 550px;
     }
 
-    &__first {
-      width: 432px;
+    &__logo-wrap {
+      //width: 432px;
     }
 
     &__contacts {
-      width: 450px;
+      //width: 450px;
     }
   }
 }

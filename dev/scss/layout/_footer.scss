@@ -1,6 +1,26 @@
 .c-footer {
   background-color: $color-secondary;
   color: $color-light;
+  overflow: hidden;
+}
+
+
+.c-footer-copyright {
+  position: relative;
+
+  &__item {
+    position: relative;
+  }
+
+  &:before {
+    content: '';
+    background-color: $color-dark;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: -100%;
+  }
 }
 
 .c-footer-requisites {
@@ -14,10 +34,9 @@
   line-height: 1.4;
   font-family: $font-secondary;
 
-  &__item {
-    margin-bottom: 20px;
+  &__item + &__item {
+    margin-top: 20px;
   }
-
 
 
   &__address {
@@ -30,8 +49,8 @@
     align-items: flex-start;
     font-size: 18px;
 
-    &__item {
-      margin-bottom: 26px;
+    &__item + &__item {
+      margin-top: 26px;
     }
   }
 }
@@ -39,9 +58,6 @@
 @media (min-width: $bp-xxl) {
   .c-footer-requisites {
     font-size: 25px;
-
-
-
   }
 }
 
@@ -49,27 +65,21 @@
   padding-top: 26px;
   padding-bottom: 26px;
 
-  &__text {
-    font-size: 14px;
-    line-height: 1.6;
-  }
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 @media (min-width: $bp-xl) {
   .c-footer-content {
-    &__text {
-      font-size: 15px;
-      line-height: 1.5;
-    }
+    font-size: 15px;
+    line-height: 1.5;
   }
 }
 
 @media (min-width: $bp-xxl) {
   .c-footer-content {
-    &__text {
-      font-size: 18px;
-      line-height: 1.6;
-    }
+    font-size: 18px;
+    line-height: 1.6;
   }
 }
 
@@ -81,9 +91,11 @@
   padding-bottom: 26px;
   font-size: 14px;
   line-height: 1.2;
-  .c-btn_link{
+
+  .c-btn_link {
     text-decoration: underline;
   }
+
   &__item + &__item {
     margin-top: 15px;
   }
@@ -101,6 +113,7 @@
     }
   }
 }
+
 @media (min-width: $bp-xxl) {
   .c-footer-copyright {
     font-size: 16px;

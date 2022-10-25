@@ -1,0 +1,59 @@
+.preloader-container {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $color-secondary;
+}
+.preloader {
+  position: absolute;
+  left: calc(50%);
+  top: calc(50%);
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height: 120px;
+  aspect-ratio: 1;
+}
+
+.cube {
+  background-color: $color-primary;
+}
+
+.cube7 {
+  animation: 0.6s pulse infinite ease-in-out;
+}
+
+.cube4,
+.cube8 {
+  animation: 0.6s pulse 150ms infinite ease-in-out;
+}
+
+.cube1,
+.cube5,
+.cube9 {
+  animation: 0.6s pulse 300ms infinite ease-in-out;
+}
+
+.cube2,
+.cube6 {
+  animation: 0.6s pulse 450ms infinite ease-in-out;
+}
+
+.cube3 {
+  animation: 0.6s pulse 600ms infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

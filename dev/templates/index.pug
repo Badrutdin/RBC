@@ -5,7 +5,7 @@ append content
             .c-section__header
                 +sliderHeader({title: 'Новости', tabListItems: models.tabListModel})
         .slider-container
-            .c-card-news-list.slider
+            .c-card-news-list.slider(data-slider='news-main-page')
                 .c-card-news-list__item
                     +newsCardPrimary(models.newsCardModel)
                 .c-card-news-list__item

@@ -117,10 +117,13 @@
   }
 }
 
+.c-btn_link.c-btn_color-primary.c-btn_active {
+  color: $color-primary;
+}
 .c-btn_link.c-btn_color-primary {
   color:$color-light;
   background-color: transparent;
-  &:hover, &:focus {
+  &:hover, &:focus{
     color: $color-primary;
   }
 }
@@ -128,7 +131,7 @@
   .c-btn {
     &_size-md {
       min-height: 44px;
-      padding: 0 25px;
+      padding: 0 15px;
       font-size: 12px;
     }
     &_size-lg {

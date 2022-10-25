@@ -1,10 +1,27 @@
 
-.c-menu {
+.c-bottom-menu {
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    border-top: 1px solid currentColor;
+    left: 12px;
+    right: 12px;
+    position: absolute;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
 
   font-family: $font-secondary;
   padding-top: 26px;
-  padding-bottom: 26px;
   justify-content: space-between;
+  padding-bottom: 0;
 
   &__link {
     height: 100%;
@@ -21,30 +38,30 @@
     margin-bottom: 26px;
   }
 
-  &_footer {
-    border-top: 1px solid currentColor;
-    border-bottom: 1px solid currentColor;
-    padding-bottom: 0;
-  }
 }
 
 @media (min-width: $bp-xl) {
-  .c-menu {
+  .c-bottom-menu {
     padding-top: 0;
     padding-bottom: 0;
     border-top: none;
     height: 54px;
 
+    &:before, &:after {
+      left: -100%;
+      right: -100%;
+    }
+
+    &:before {
+      display: none;
+    }
+
     &__item {
       margin-bottom: 0;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 14px;
     }
-    .c-menu_footer{
-      &__item {
-        font-size: 14px;
-      }
-    }
+
     &__link {
       text-decoration: none;
     }
@@ -52,13 +69,64 @@
 }
 
 @media (min-width: $bp-xxl) {
-  .c-menu {
+  .c-bottom-menu {
     height: 75px;
-    .c-menu_footer{
-      &__item {
-        font-size: 20px;
-      }
+
+    &__item {
+      font-size: 20px;
     }
+  }
+}
+
+
+.c-top-menu {
+
+  font-family: $font-secondary;
+  padding-top: 26px;
+  padding-bottom: 26px;
+
+  &__link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    justify-content: flex-start;
+  }
+
+  &__item {
+    font-size: 17px;
+    line-height: 1.2;
+    margin-bottom: 26px;
+  }
+
+}
+
+@media (min-width: $bp-xl) {
+  .c-top-menu {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 54px;
+
+    &__item {
+      margin-bottom: 0;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    &__link {
+      text-decoration: none;
+    }
+
+    &__link:hover, &__link:focus {
+      color: $color-primary;
+    }
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-top-menu {
+    height: 75px;
+
     &__item {
       font-size: 18px;
     }
