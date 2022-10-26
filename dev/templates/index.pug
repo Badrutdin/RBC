@@ -24,10 +24,14 @@ append content
                     +newsCardPrimary(models.newsCardModel)
                 .c-card-news-list__item
                     +newsCardPrimary(models.newsCardModel)
+        .container
+            .c-section__footer
+                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') посмотреть все новости
     .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
         +actionCard({text: 'Аренда офисов <br> от 10 м2 до 1350 м <sup>2</sup>', btnText: 'выбрать сейчас'})
     .c-section.c-section_lg
         .container
+            .c-section__header Сервис
             .row.c-card-link-list
                 .col-12.col-md-6.col-lg-4.c-card-link-list__item
                     +cardLink(models.cardLinkModel)
@@ -41,7 +45,9 @@ append content
                     +cardLink(models.cardLinkModel)
                 .col-12.col-md-6.col-lg-4.c-card-link-list__item
                     +cardLink(models.cardLinkModel)
-    .arrows
+            .c-section__footer
+                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') Подробнее о сервисе
+
     button.c-btn.c-btn_size-md.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper(type='button') перезвоните мне
     button.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper(type='button') перезвоните мне
     button.c-btn.c-btn_size-xl.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper(type='button') перезвоните мне

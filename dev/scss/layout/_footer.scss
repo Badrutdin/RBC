@@ -96,8 +96,19 @@
     text-decoration: underline;
   }
 
-  &__item + &__item {
+
+    &__item + &__item {
     margin-top: 15px;
+  }
+  &__item.c-footer-copyright__item_img {
+    display: flex;
+    margin-top: 10px;
+  }
+  &__item.c-footer-copyright__item_img .c-btn_link{
+    margin-right: 15px;
+  }
+  &__item.c-footer-copyright__item_img .c-footer-copyright__item-img{
+    width: 65px;
   }
 }
 
