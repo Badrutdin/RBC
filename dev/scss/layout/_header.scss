@@ -82,6 +82,8 @@
 
 @media (min-width: $bp-xl) {
   .c-header {
+    position: absolute;
+    width: 100%;
     .c-top-menu[data-open="closed"] {
       display: flex;
     }

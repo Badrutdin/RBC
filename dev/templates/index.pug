@@ -1,5 +1,22 @@
 extends ../pug/layout
 append content
+    .c-section.c-section_lg.c-section_banner(style='background-image:url(images/main-banner.jpg)')
+        .container
+            .c-banner-content
+                h1.c-banner-content__title
+                    span.c-banner-content__title_small
+                        | Это –
+                        br
+                    | офисный центр
+                    br
+                    | класса А в Самаре
+                .c-banner-content__controls
+                    a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') о центре
+                .d-none.d-lg-block.c-banner-content__desc Сочетание современного дизайна, эффективных инженерных решений, комфортной среды и профессионального сервиса
+                .c-banner-content__footer
+                    .c-action-card
+                        .c-action-card__body
+                            .c-action-card__content Аренда офисов от 500 руб./м2
     .c-section.c-section_lg
         .container
             .c-section__header
