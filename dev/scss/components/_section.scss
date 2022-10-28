@@ -7,7 +7,6 @@
       margin-bottom: 15px;
       font-size: 32px;
       line-height: 1.1;
-      color: $color-dark;
     }
 
     .c-section__footer {
@@ -37,6 +36,17 @@
     height: 420px;
     padding-top: 15px;
     padding-bottom: 15px;
+  }
+
+  &_lg.c-section_map{
+    padding: 0;
+  }
+  &_lg.c-section_map .c-section__content{
+    min-height: 450px;
+    background-image: url(images/map.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
 }
@@ -72,6 +82,12 @@
       height: 100%;
     }
 
+    &_lg.c-section_map .c-section__content{
+      min-height: 660px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
   }
 
 }
@@ -96,6 +112,9 @@
       padding-top: 192px;
       padding-bottom: 40px;
       height: 930px;
+    }
+    &_lg.c-section_map .c-section__content{
+      min-height: 930px;
     }
   }
 }
