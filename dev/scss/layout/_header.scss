@@ -34,8 +34,8 @@
   display: flex;
   align-items: center;
 }
-  &__menu-handler {
-    color: $color-dark;
+  &__menu-handler .c-btn-ico__icon{
+    stroke: $color-dark;
   }
 
   .c-top-menu[data-open="closed"] {

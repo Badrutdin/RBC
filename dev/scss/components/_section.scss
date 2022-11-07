@@ -38,17 +38,6 @@
     padding-bottom: 15px;
   }
 
-  &_lg.c-section_map{
-    padding: 0;
-  }
-  &_lg.c-section_map .c-section__content{
-    min-height: 450px;
-    background-image: url(images/map.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
 }
 
 @media (min-width: $bp-xl) {
@@ -82,11 +71,6 @@
       height: 100%;
     }
 
-    &_lg.c-section_map .c-section__content{
-      min-height: 660px;
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }
 
   }
 
@@ -113,9 +97,6 @@
       padding-bottom: 40px;
       height: 930px;
     }
-    &_lg.c-section_map .c-section__content{
-      min-height: 930px;
-    }
   }
 }
 
@@ -124,5 +105,26 @@
     padding-top: 35px;
     padding-bottom: 35px;
     font-size: 36px;
+  }
+}
+
+.c-map-section{
+  position: relative;
+  background-image: url(images/map.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 450px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (min-width: $bp-xl) {
+  .c-map-section{
+    min-height: 660px;
+  }
+  }
+@media (min-width: $bp-xxl) {
+  .c-map-section{
+    min-height: 930px;
   }
 }

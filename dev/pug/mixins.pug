@@ -88,3 +88,22 @@ mixin sliderHeader(data)
             .c-slider-nav
         .col-12.col-xl-10.c-slider-header__tabs
             +tabList(data.tabListItems)
+
+mixin mapItem(mapItemModel)
+    a.c-map-item(href='#')
+        .c-map-item__body
+            .c-map-item__icon
+                +svgSprite({
+                    name: mapItemModel.svg.name,
+                    className: mapItemModel.svg.className,
+                    width: mapItemModel.svg.width,
+                    height: mapItemModel.svg.height
+                })
+            .c-map-item__title= mapItemModel.title
+        .c-map-item__count= mapItemModel.count
+
+mixin suggestionItem(data)
+    .c-map-suggestions__item
+        a.c-map-suggestion(href='#')
+            .c-map-suggestion__preview(style='background-image:url(images/' + data.img + ')')
+            .c-map-suggestion__title= data.title

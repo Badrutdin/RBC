@@ -80,8 +80,141 @@ append content
                     +cardLink(models.cardLinkModel)
             .c-section__footer
                 a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') Подробнее о сервисе
-    .c-section.c-section_lg.c-section_map
-        .c-section__header.d-xl-none Инфраструктура
+    .c-section.c-section_lg.pb-0.p-xl-0
+        .container
+            .c-section__header.d-xl-none Инфраструктура
+        .c-map-section
+            .c-map-guide
+                .c-map-guide__left.container
+                    .c-map-list
+                        .c-map-list__header.d-none.d-xl-block Инфраструктура
+                        ul.row.c-map-list__list
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Прогулки и парки',
+                                    count: 4,
+                                    svg: {
+                                        name: 'infrastructure-1',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Банки и обмены валют',
+                                    count: 9,
+                                    svg: {
+                                        name: 'infrastructure-2',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Спортивные центры',
+                                    count: 7,
+                                    svg: {
+                                        name: 'infrastructure-4',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Продуктовые магазины',
+                                    count: 12,
+                                    svg: {
+                                        name: 'infrastructure-5',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Медицинские учреждения',
+                                    count: 5,
+                                    svg: {
+                                        name: 'infrastructure-6',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Платные парковки',
+                                    count: 2,
+                                    svg: {
+                                        name: 'infrastructure-7',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                .c-map-guide__right.d-none.d-xl-block
+                    .c-map-suggestions
+                        .c-map-suggestions__header Чем заняться в обед?
+                        .c-map-suggestions__list
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Покататься на велосипеде в парке', img: 'suggestion-1.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Поиграть в бильярд или сходить в тир', img: 'suggestion-2.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
         .c-section__content
             .container
     .c-section.c-section_lg.u-bg-secondary.u-color-light
@@ -93,36 +226,6 @@ append content
                     br
                     br
                     | д. 41 Рядом с РДЦ пролегают основные транспортные артерии города: Московское шоссе, ул. Авроры, ул. Советской Армии, ул. Ново-Садовая, ул. Стара-Загора. Удобное расположение в географическом и деловом центре города обеспечивает перспективное бизнес-окружение. Бизнес-центр также имеет прямой доступ к историческим и промышленным районам города, междугороднему автовокзалу и международному аэропорту Курумоч.
-
-
-
-    .c-section.c-section_lg
-        .container
-            .c-section__header
-                +sliderHeader({title: 'Новости', tabListItems: models.tabListModel})
-        .slider-container
-            .c-card-news-list.slider(data-slider='news-main-page')
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-                .c-card-news-list__item
-                    +newsCardPrimary(models.newsCardModel)
-        .container
-            .c-section__footer
-                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') посмотреть все новости
 
     .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
         +actionCard({text: 'Аренда офисов <br> от 10 м2 до 1350 м <sup>2</sup>', btnText: 'выбрать сейчас'})
