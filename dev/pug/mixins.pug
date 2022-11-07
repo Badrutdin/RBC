@@ -103,7 +103,6 @@ mixin mapItem(mapItemModel)
         .c-map-item__count= mapItemModel.count
 
 mixin suggestionItem(data)
-    .c-map-suggestions__item
         a.c-map-suggestion(href='#')
             .c-map-suggestion__preview(style='background-image:url(images/' + data.img + ')')
             .c-map-suggestion__title= data.title
