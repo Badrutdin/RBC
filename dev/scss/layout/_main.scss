@@ -247,11 +247,19 @@ body {
     width: 241px;
   }
 
-  .slick-slide {
-    margin: 0 13px;
+  &_news {
+    .slick-slide {
+      margin: 0 13px;
 
-    .c-card-news-list__item {
-      margin-bottom: 0;
+      .c-card-news-list__item {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &_arendators {
+    .slick-slide {
+      margin: 0 50px;
     }
   }
 }
@@ -402,12 +410,15 @@ body {
   &__left {
     padding: 10px 15px 15px;
     overflow-y: scroll;
+    @include hide-scrollbar();
+
   }
 
   &__right {
     padding: 20px;
     width: 250px;
     overflow-y: scroll;
+    @include hide-scrollbar();
   }
 }
 
@@ -608,4 +619,256 @@ body {
     }
   }
 
+}
+
+.c-distance-graph {
+  display: flex;
+  align-items: flex-end;
+
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $color-primary;
+  }
+
+  &__graph {
+    margin-right: 10px;
+  }
+
+  &__icon {
+    width: 230px;
+  }
+
+  &__distance {
+    font-size: 20px;
+    line-height: 1.1;
+    color: $color-light;
+  }
+
+  &_one {
+    .c-distance-graph__icon {
+      width: 144px;
+    }
+  }
+
+  &_two {
+    .c-distance-graph__icon {
+      width: 170px;
+    }
+  }
+
+  &_three {
+    .c-distance-graph__icon {
+      width: 190px;
+    }
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .c-distance-graph {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__graph {
+      margin-right: 15px;
+    }
+
+    &__icon {
+      width: 510px;
+      height: 22px;
+    }
+
+    &__distance {
+      font-size: 25px;
+    }
+
+    &_one {
+      .c-distance-graph__icon {
+        width: 170px;
+      }
+    }
+
+    &_two {
+      .c-distance-graph__icon {
+        width: 230px;
+      }
+    }
+
+    &_three {
+      .c-distance-graph__icon {
+        width: 310px;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-distance-graph {
+    &__title {
+      font-size: 22px;
+    }
+
+    &__icon {
+      width: 718px;
+      height: 32px;
+    }
+
+    &__distance {
+      font-size: 35px;
+    }
+
+    &_one {
+      .c-distance-graph__icon {
+        width: 240px;
+      }
+    }
+
+    &_two {
+      .c-distance-graph__icon {
+        width: 324px;
+      }
+    }
+
+    &_three {
+      .c-distance-graph__icon {
+        width: 432px;
+      }
+    }
+  }
+}
+
+.c-distance-list {
+  position: relative;
+
+  &__item + &__item {
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .c-distance-list {
+    &__item + &__item {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-distance-list {
+    &__item + &__item {
+      margin-top: 30px;
+    }
+  }
+}
+
+.c-decor-wrap {
+  position: relative;
+}
+
+.c-decor-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-decor {
+  &_transport {
+    width: 100%;
+    min-height: 366px;
+    max-width: 350px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .c-decor {
+    &_transport {
+      position: absolute;
+      bottom: 55px;
+      right: -140px;
+      width: 916px;
+      height: 606px;
+      max-width: 100%;
+
+    }
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-decor {
+    &_transport {
+      bottom: 78px;
+      right: -200px;
+      width: 1287px;
+      height: 852px;
+    }
+  }
+}
+
+.transport-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+@media (min-width: $bp-xxl) {
+  .transport-desc {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .transport-desc {
+    font-size: 20px;
+  }
+}
+
+.c-simple-card {
+  @include border-shadow(1px, $color-dark);
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    max-width: 80%;
+  }
+}
+
+.c-simple-card-list {
+  display: flex;
+  width: 290px;
+
+  &__item {
+    //width: 145px;
+    height: 95px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .c-simple-card-list {
+    width: 936px;
+
+    &__item {
+      //width: 366px;
+      height: 170px;
+    }
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-simple-card-list {
+    width: 1462px;
+
+    &__item {
+      //width: 366px;
+      height: 240px;
+    }
+  }
+}
+
+.slide {
+  margin-top: 2px;
 }

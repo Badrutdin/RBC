@@ -7,6 +7,7 @@ $(document).ready(function () {
     const $menuHandler = $('[data-menu-handler]')
     const $menu = $('[data-open]')
     const $slider = $('[data-slider="news-main-page"]');
+    const $slider2 = $('[data-slider="arendators"]');
 
     const breakPoints = {
         xs: 320,
@@ -61,7 +62,7 @@ $(document).ready(function () {
         variableWidth: true,
         nextArrow: nextArrowPrimary,
         prevArrow: prevArrowPrimary,
-        appendArrows: $('.c-slider-nav'),
+        appendArrows: $slider.closest('.c-section').find('.c-slider-nav'),
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
@@ -105,6 +106,19 @@ $(document).ready(function () {
             resetSlidesView(slick.$slides, slidePrimaryClasses, slideSecondaryClasses)
         }
     });
+
+    $slider2.slick({
+        variableWidth: true,
+        nextArrow: nextArrowPrimary,
+        prevArrow: prevArrowPrimary,
+        appendArrows: $slider2.closest('.c-section').find('.c-slider-nav'),
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        mobileFirst: true
+    });
+
+
     menuHandlerDetach()
     setTimeout(() => {
         $('.preloader-container').hide()

@@ -22,7 +22,7 @@ append content
             .c-section__header
                 +sliderHeader({title: 'Новости', tabListItems: models.tabListModel})
         .slider-container
-            .c-card-news-list.slider(data-slider='news-main-page')
+            .c-card-news-list.slider.slider_news(data-slider='news-main-page')
                 .c-card-news-list__item
                     +newsCardPrimary(models.newsCardModel)
                 .c-card-news-list__item
@@ -206,7 +206,10 @@ append content
                             .c-map-suggestions__item
                                 +suggestionItem({title: 'Покататься на велосипеде в парке', img: 'suggestion-1.jpg'})
                             .c-map-suggestions__item
-                                +suggestionItem({title: 'Поиграть в бильярд или сходить в тир', img: 'suggestion-2.jpg'})
+                                +suggestionItem({
+                                    title: 'Поиграть в бильярд или сходить в тир',
+                                    img: 'suggestion-2.jpg'
+                                })
                             .c-map-suggestions__item
                                 +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
                             .c-map-suggestions__item
@@ -215,21 +218,133 @@ append content
                                 +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
                             .c-map-suggestions__item
                                 +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
-        .c-section__content
-            .container
-    .c-section.c-section_lg.u-bg-secondary.u-color-light
+    .c-section.c-section_lg.u-bg-secondary.u-color-light.u-overflow-hidden.c-decor-wrap(style='background-image:url(images/transport-bg.jpg)')
         .container
             .c-section__header Транспортная доступность
             .row
-                .col-12.col-xl-6
+                .col-12.col-xl-6.transport-desc
                     | Бизнес-центр «Региональный Деловой Центр» расположен в престижном Октябрьском районе г. Самары по адресу: Московское шоссе,
                     br
                     br
                     | д. 41 Рядом с РДЦ пролегают основные транспортные артерии города: Московское шоссе, ул. Авроры, ул. Советской Армии, ул. Ново-Садовая, ул. Стара-Загора. Удобное расположение в географическом и деловом центре города обеспечивает перспективное бизнес-окружение. Бизнес-центр также имеет прямой доступ к историческим и промышленным районам города, междугороднему автовокзалу и международному аэропорту Курумоч.
+        .c-decor-container
+            img.c-decor.c-decor_transport(src='images/decor-map.png')
+        .container
+            .c-distance-list
+                .c-distance-list__item
+                    .c-distance-graph.c-distance-graph_one
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 1. До Автовокзала
+                            +svgSprite({
+                                name: 'arrow-line',
+                                className: 'c-distance-graph__icon',
+                                width: 511,
+                                height: 13
+                            })
+                        .c-distance-graph__distance 0,7 км
+                .c-distance-list__item
+                    .c-distance-graph.c-distance-graph_two
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 2. До пляжа у «Ладьи»
+                            +svgSprite({
+                                name: 'arrow-line',
+                                className: 'c-distance-graph__icon',
+                                width: 511,
+                                height: 13
+                            })
+                        .c-distance-graph__distance 5,7 км
+                .c-distance-list__item
+                    .c-distance-graph.c-distance-graph_three
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 3. До ЖД вокзала
+                            +svgSprite({
+                                name: 'arrow-line',
+                                className: 'c-distance-graph__icon',
+                                width: 511,
+                                height: 13
+                            })
+                        .c-distance-graph__distance 7,6 км
+                .c-distance-list__item
+                    .c-distance-graph
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 4. До Аэропорта «Курумоч»
+                            +svgSprite({
+                                name: 'arrow-line',
+                                className: 'c-distance-graph__icon',
+                                width: 511,
+                                height: 13
+                            })
+                        .c-distance-graph__distance 46 км
+    .c-section.c-section_lg
+        .container
+            .c-section__header
+                +sliderHeader({
+                    title: 'Наши арендаторы', tabListItems: [
+                        {text: 'ВСЕ', href: '#'},
+                        {text: 'Финансы', href: '#'},
+                        {text: 'Энергетика', href: '#'},
+                        {text: 'Технологии', href: '#'},
+                        {text: 'Здравоохранение', href: '#'}]
+                })
+                .slider-container
+                    .slider.slider_arendators(data-slider='arendators')
+                        .slide
+                            .row.c-simple-card-list.u-reset-indent
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-1.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-2.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-3.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-4.jpg').col-12
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-5.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-6.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-7.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-8.jpg')
+                        .slide
+                            .row.c-simple-card-list.u-reset-indent
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-1.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-2.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-3.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-4.jpg').col-12
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-5.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-6.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-7.jpg')
+                                .col-6.col-xl-3.c-simple-card-list__item
+                                    .c-simple-card
+                                        img.c-simple-card__img(src='images/arendator-8.jpg')
+            .c-section__footer
+                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') Показать всех арендаторов
 
     .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
         +actionCard({text: 'Аренда офисов <br> от 10 м2 до 1350 м <sup>2</sup>', btnText: 'выбрать сейчас'})
-
 
 
 
