@@ -15,8 +15,11 @@
     .c-section__footer {
       margin-top: 15px;
 
-      .c-btn_section-control {
-        width: 176px;
+      .c-btn_section-control_sm {
+        width: 180px;
+      }
+      .c-btn_section-control_md {
+        width: 200px;
       }
     }
   }
@@ -44,6 +47,9 @@
 }
 
 @media (min-width: $bp-xl) {
+
+}
+@media (min-width: $bp-xl) {
   .c-section {
     &_lg {
       padding-top: 70px;
@@ -57,8 +63,11 @@
       .c-section__footer {
         margin-top: 26px;
 
-        .c-btn_section-control {
+        .c-btn_section-control_sm {
           width: 286px;
+        }
+        .c-btn_section-control_md {
+          width: 350px;
         }
       }
     }

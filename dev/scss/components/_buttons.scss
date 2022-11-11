@@ -115,6 +115,13 @@
   &_color-primary:hover,&_color-primary:focus {
     background-color: $color-primary-dark;
   }
+  &.slick-arrow{
+    margin-right: 7px;
+    margin-left: 7px;
+  }
+  &_disabled,&.slick-disabled{
+    background-color: rgba($color-dark,.1);
+  }
 }
 
 .c-btn_link.c-btn_color-primary.c-btn_active {
@@ -162,6 +169,10 @@
     &_size-xl {
       min-height: 60px;
       padding: 0 40px;
+    }
+    &.slick-arrow{
+      margin-right: 10px;
+      margin-left: 10px;
     }
   }
 }

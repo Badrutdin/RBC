@@ -19,12 +19,12 @@ $(document).ready(function () {
     }
     const slideSecondaryClasses = 'c-card-news_md c-card-news_color-dark c-card-news_style-secondary';
     const slidePrimaryClasses = 'c-card-news_lg c-card-news_color-light c-card-news_style-primary';
-    const nextArrowPrimary = `<div class="c-slider-nav__item"><button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
+    const nextArrowPrimary = `<button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="images/svg.svg#arrow" xmlns="http://www.w3.org/1999/xlink"></use>
-                                    </svg></button></div>`;
-    const prevArrowPrimary = `<div class="c-slider-nav__item"><button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary c-btn-ico_prev" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    </svg></button>`;
+    const prevArrowPrimary = `<button class="c-btn-ico c-btn-ico_md c-btn-ico_color-primary c-btn-ico_prev" type="button"><svg class="c-btn-ico__icon" fill="none" height="12" width="17" xmlns="http://www.w3.org/2000/svg">
                                         <use xlink:href="images/svg.svg#arrow" xmlns="http://www.w3.org/1999/xlink"></use>
-                                    </svg></button></div>`;
+                                    </svg></button>`;
     const $headerMenu = $('.c-header__menu')
     const $menuHandlerWrap = $('.c-header__menu-handler')
     const menuHandlerForThrottle = throttle(menuHandlerDetach, 500);
@@ -115,7 +115,8 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        mobileFirst: true
+        mobileFirst: true,
+        infinite:false
     });
 
 

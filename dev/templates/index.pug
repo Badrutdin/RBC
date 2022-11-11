@@ -11,7 +11,7 @@ append content
                     br
                     | класса А в Самаре
                 .c-banner-content__controls
-                    a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') о центре
+                    a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_sm(href='#') о центре
                 .d-none.d-lg-block.c-banner-content__desc Сочетание современного дизайна, эффективных инженерных решений, комфортной среды и профессионального сервиса
                 .c-banner-content__footer
                     .c-action-card
@@ -43,7 +43,7 @@ append content
                     +newsCardPrimary(models.newsCardModel)
         .container
             .c-section__footer
-                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') посмотреть все новости
+                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_sm(href='#') посмотреть все новости
     .c-section.c-section_lg.u-bg-secondary
         .container
             .c-section__header.u-color-light класс «А»
@@ -79,7 +79,7 @@ append content
                 .col-12.col-md-6.col-lg-4.c-card-link-list__item
                     +cardLink(models.cardLinkModel)
             .c-section__footer
-                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') Подробнее о сервисе
+                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_sm(href='#') Подробнее о сервисе
     .c-section.c-section_lg.pb-0.p-xl-0
         .container
             .c-section__header.d-xl-none Инфраструктура
@@ -235,45 +235,53 @@ append content
                     .c-distance-graph.c-distance-graph_one
                         .c-distance-graph__graph
                             .c-distance-graph__title 1. До Автовокзала
-                            +svgSprite({
-                                name: 'arrow-line',
-                                className: 'c-distance-graph__icon',
-                                width: 511,
-                                height: 13
-                            })
+                            .c-line
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
                         .c-distance-graph__distance 0,7 км
                 .c-distance-list__item
                     .c-distance-graph.c-distance-graph_two
                         .c-distance-graph__graph
                             .c-distance-graph__title 2. До пляжа у «Ладьи»
-                            +svgSprite({
-                                name: 'arrow-line',
-                                className: 'c-distance-graph__icon',
-                                width: 511,
-                                height: 13
-                            })
+                            .c-line.c-line_1
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
                         .c-distance-graph__distance 5,7 км
                 .c-distance-list__item
                     .c-distance-graph.c-distance-graph_three
                         .c-distance-graph__graph
                             .c-distance-graph__title 3. До ЖД вокзала
-                            +svgSprite({
-                                name: 'arrow-line',
-                                className: 'c-distance-graph__icon',
-                                width: 511,
-                                height: 13
-                            })
+                            .c-line.c-line_2
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
                         .c-distance-graph__distance 7,6 км
                 .c-distance-list__item
                     .c-distance-graph
                         .c-distance-graph__graph
                             .c-distance-graph__title 4. До Аэропорта «Курумоч»
-                            +svgSprite({
-                                name: 'arrow-line',
-                                className: 'c-distance-graph__icon',
-                                width: 511,
-                                height: 13
-                            })
+                            .c-line.c-line_3
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
                         .c-distance-graph__distance 46 км
     .c-section.c-section_lg
         .container
@@ -286,65 +294,90 @@ append content
                         {text: 'Технологии', href: '#'},
                         {text: 'Здравоохранение', href: '#'}]
                 })
-                .slider-container
-                    .slider.slider_arendators(data-slider='arendators')
-                        .slide
-                            .row.c-simple-card-list.u-reset-indent
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-1.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-2.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-3.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-4.jpg').col-12
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-5.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-6.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-7.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-8.jpg')
-                        .slide
-                            .row.c-simple-card-list.u-reset-indent
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-1.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-2.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-3.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-4.jpg').col-12
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-5.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-6.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-7.jpg')
-                                .col-6.col-xl-3.c-simple-card-list__item
-                                    .c-simple-card
-                                        img.c-simple-card__img(src='images/arendator-8.jpg')
+            .slider-container
+                .slider.slider_arendators(data-slider='arendators')
+                    .slide
+                        .row.c-simple-card-list.u-reset-indent
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-1.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-2.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-3.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-4.jpg').col-12
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-5.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-6.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-7.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-8.jpg')
+                    .slide
+                        .row.c-simple-card-list.u-reset-indent
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-1.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-2.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-3.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-4.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-5.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-6.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-7.jpg')
+                            .col-6.col-lg-3.c-simple-card-list__item
+                                .c-simple-card
+                                    img.c-simple-card__img(src='images/arendator-8.jpg')
             .c-section__footer
-                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control(href='#') Показать всех арендаторов
+                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_md(href='#') Показать всех арендаторов
 
     .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
         +actionCard({text: 'Аренда офисов <br> от 10 м2 до 1350 м <sup>2</sup>', btnText: 'выбрать сейчас'})
+    .c-description.c-description_left-desc
+        .row.h-100.u-reset-indent.c-description__list
+            .col-12.col-md-6.c-description__item.c-description__item_left
+                .c-description__desc После ввода в эксплуатацию офисное здание «Регионального Делового Центра» стало настоящей жемчужиной Самары. Зеркальный фасад необычной формы находится в гармонии с окружающей застройкой. Богатая входная группа призвана не только эстетически радовать посетителей, но и служить комфорту и безопасности. В вестибюле комплекса выполнена дорогая отделка с использованием натуральных и экологически чистых материалов. Этажи, зоны общего пользования и холлы также имеют высококачественную отделку.
+            .col-12.col-md-6.order-1.order-md-0.c-description__item
+                .c-description__img(style='background-image:url(images/desc1.jpg')
+    .c-description.c-description_right-desc
+        .row.h-100.u-reset-indent.c-description__list
+            .col-12.col-md-6.c-description__item.order-1.order-md-0
+                .c-description__img(style='background-image:url(images/desc2.jpg')
+            .col-12.col-md-6.c-description__item
+                .c-description__desc На 1 этаже размещена служба ресепшн, приветливо встречающая сотрудников и посетителей РДЦ. Гости могут воспользоваться услугами бесплатного Wi-Fi. Особое внимание уделено безопасности пребывания: осуществляется круглосуточный видеомониторинг периметра и общественных зон здания. Задействованы цифровые системы связи 2 провайдеров.
+    .c-description.c-description_left-desc
+        .row.h-100.u-reset-indent.c-description__list
+            .col-12.col-md-6.c-description__item.c-description__item_left
+                .c-description__desc Для клиентов бизнес-центра «Региональный Деловой Центр» представлены офисные пространства с открытой и смешанной планировкой. Все помещения предлагаются в аренду уже с готовой отделкой. Дизайн интерьеров выполнен в стильном минималистичном ключе. Отделка соответствует современным требованиям экологических стандартов.
+            .col-12.col-md-6.order-1.order-md-0.c-description__item
+                .c-description__img(style='background-image:url(images/desc3.jpg')
+    .c-description.c-description_right-desc
+        .row.h-100.u-reset-indent.c-description__list
+            .col-12.col-md-6.c-description__item.order-1.order-md-0
+                .c-description__img(style='background-image:url(images/desc4.jpg')
+            .col-12.col-md-6.c-description__item
+                .c-description__desc У РДЦ расположена собственная малая парковка для арендаторов на 382 машиноместа + большая парковка на 500 машиномест. Резидентам на каждые 50 м2 арендуемой площади выделяется одно льготное машиноместо на собственной малой парковке. Приятным бонусом для автомобилистов станет наличие автомойки и автозаправок в непосредственной близости от РДЦ.
+
 
 
 
