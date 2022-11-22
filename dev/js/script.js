@@ -8,6 +8,9 @@ $(document).ready(function () {
     const $menu = $('[data-open]')
     const $slider = $('[data-slider="news-main-page"]');
     const $slider2 = $('[data-slider="arendators"]');
+    const $slider3 = $('[data-slider="feedback"]');
+    const $slider3Container = $slider3.closest('.slider-container');
+
 
     const breakPoints = {
         xs: 320,
@@ -28,7 +31,65 @@ $(document).ready(function () {
     const $headerMenu = $('.c-header__menu')
     const $menuHandlerWrap = $('.c-header__menu-handler')
     const menuHandlerForThrottle = throttle(menuHandlerDetach, 500);
+    const sliderHandlerForThrottle = throttle(destroySlider, 500);
+let isDestroyed = false;
+    function destroySlider() {
+        console.log('destroySlider')
+        const $feedback = $('.c-feedback')
+        const sliderTemplate = `<div class="slider slider_feedback" data-slider="feedback">
+                        <div class="slide">
+                            <div class="c-feedback-slide">
+                                <div class="c-feedback-slide__logo"><img src="images/fb-logo_1.png"></div>
+                                <div class="c-feedback-slide__text">«Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="c-feedback-slide">
+                                <div class="c-feedback-slide__logo"><img src="images/fb-logo_1.png"></div>
+                                <div class="c-feedback-slide__text">«Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="c-feedback-slide">
+                                <div class="c-feedback-slide__logo"><img src="images/fb-logo_1.png"></div>
+                                <div class="c-feedback-slide__text">«Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»</div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="c-feedback-slide">
+                                <div class="c-feedback-slide__logo"><img src="images/fb-logo_1.png"></div>
+                                <div class="c-feedback-slide__text">«Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»</div>
+                            </div>
+                        </div>
+                    </div>`
 
+        if (window.innerWidth >= breakPoints.lg ) {
+            $slider3Container.find('[data-slider="feedback"]').slick('destroy')
+            $slider3Container.hide()
+            $feedback.show();
+            isDestroyed = true
+        } else {
+            if(isDestroyed){
+                $slider3Container.html(sliderTemplate)
+                $slider3Container.show()
+                $feedback.hide()
+                $slider3Container.find('[data-slider="feedback"]').slick({
+                    variableWidth: true,
+                    nextArrow: nextArrowPrimary,
+                    prevArrow: prevArrowPrimary,
+                    appendArrows: $slider3Container.find('[data-slider="feedback"]').closest('.c-section').find('.c-slider-nav'),
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    mobileFirst: true,
+                    infinite: false
+                })
+
+            }
+            isDestroyed = false;
+
+        }
+    }
     function menuHandlerDetach() {
         if (window.innerWidth > breakPoints.xl - 1) {
             $headerMenu.prepend($menuHandlerWrap.detach())
@@ -38,6 +99,7 @@ $(document).ready(function () {
     }
 
     window.addEventListener('resize', menuHandlerForThrottle);
+    window.addEventListener('resize', sliderHandlerForThrottle);
     // bind actions
     $menuHandler.on('click', function () {
         if ($menu.attr('data-open') === 'opened') {
@@ -116,7 +178,18 @@ $(document).ready(function () {
         slidesToScroll: 1,
         centerMode: true,
         mobileFirst: true,
-        infinite:false
+        infinite: false
+    });
+    $slider3.slick({
+        variableWidth: true,
+        nextArrow: nextArrowPrimary,
+        prevArrow: prevArrowPrimary,
+        appendArrows: $slider3.closest('.c-section').find('.c-slider-nav'),
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        mobileFirst: true,
+        infinite: false
     });
 
 
@@ -124,6 +197,9 @@ $(document).ready(function () {
     setTimeout(() => {
         $('.preloader-container').hide()
     }, 2000)
+    destroySlider()
+    customLabelHandler('.c-input-wrap__input')
+
 })
 ;
 
@@ -187,4 +263,21 @@ function throttle(f, wait) {
         return lastResult;
     };
 }
+
+function customLabelHandler(inputSelector) {
+    $(document).on('focus',
+        inputSelector, function () {
+            $(this).closest('.c-input-wrap').addClass('c-input-wrap_changed')
+        }
+    )
+    $(document).on('focusout',
+        inputSelector, function () {
+            let val = $(this).val()
+            if (!val || val.trim() == '' || val == null) {
+                $(this).closest('.c-input-wrap').removeClass('c-input-wrap_changed')
+            }
+        }
+    )
+}
+
 

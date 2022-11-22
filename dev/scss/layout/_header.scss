@@ -82,8 +82,10 @@
 
 @media (min-width: $bp-xl) {
   .c-header {
-    position: absolute;
-    width: 100%;
+    //position: absolute;
+    //width: 100%;
+    background-color: rgba($color-secondary,.7);
+
     .c-top-menu[data-open="closed"] {
       display: flex;
     }
@@ -98,7 +100,6 @@
       font-size: 13px;
     }
 
-    background-color: transparent;
 
     .c-top-menu {
       position: static;

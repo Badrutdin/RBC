@@ -5,6 +5,17 @@
   margin-top: 15px;
   flex-wrap: wrap;
 
+  &_lg {
+    align-items: center;
+    margin-right: 18px;
+    margin-left: 18px;
+
+    .c-tab-list__item {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
   &__item {
     padding-left: 8px;
     padding-right: 8px;
@@ -19,6 +30,14 @@
   &:hover, &:focus, &_active {
     color: $color-primary_dark;
   }
+
+  &_img {
+    opacity: .4;
+
+    &:hover, &:focus, &_active {
+      opacity: 1
+    }
+  }
 }
 
 @media (min-width: $bp-md) {
@@ -30,6 +49,17 @@
 @media (min-width: $bp-xxl) {
   .c-tab-item {
     font-size: 20px;
+  }
+  .c-tab-list {
+    &_lg {
+      margin-right: 25px;
+      margin-left: 25px;
+
+      .c-tab-list__item {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
   }
 }
 

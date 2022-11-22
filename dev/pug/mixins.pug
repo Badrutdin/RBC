@@ -11,8 +11,24 @@ mixin breadCrumbs(...items)
         ul.c-breadcrumbs__list
             li.c-breadcrumbs__item
                 a.c-breadcrumbs__link(href='#')
-                    span.c-breadcrumbs__title
-                        img(alt='' height='14' src='images/home.png' width='14')
+                    span.c-breadcrumbs__title Главная
+            each item in items
+                if i === length
+                    li.c-breadcrumbs__item
+                        span.c-breadcrumbs__title= item.value
+                else
+                    li.c-breadcrumbs__item
+                        a.c-breadcrumbs__link(href='#')
+                            span.c-breadcrumbs__title= item.value
+                -i++
+mixin breadCrumbsBanner(...items)
+    -let length = Object.keys(items).length
+    -let i = 1
+    .c-breadcrumbs.c-breadcrumbs_banner
+        ul.c-breadcrumbs__list
+            li.c-breadcrumbs__item
+                a.c-breadcrumbs__link(href='#')
+                    span.c-breadcrumbs__title Главная
             each item in items
                 if i === length
                     li.c-breadcrumbs__item
@@ -72,6 +88,13 @@ mixin tabList(tabListModel)
             li.c-tab-list__item
                 a.c-tab-item(href=item.href)=item.text
 
+mixin tabList2(tabListModel)
+    ul.c-tab-list.c-tab-list_lg
+        for item in tabListModel
+            li.c-tab-list__item
+                a.c-tab-item.c-tab-item_img(href=item.href)
+                    img(src=item.text)
+
 mixin sliderNavPrimary()
     .c-slider-nav
         .c-slider-nav__item
@@ -106,3 +129,296 @@ mixin suggestionItem(data)
         a.c-map-suggestion(href='#')
             .c-map-suggestion__preview(style='background-image:url(images/' + data.img + ')')
             .c-map-suggestion__title= data.title
+
+mixin infro()
+    .c-section.c-section_lg.pb-0.p-xl-0
+        .container
+            .c-section__header.d-xl-none Инфраструктура
+        .c-map-section
+            .c-map-guide
+                .c-map-guide__left.container
+                    .c-map-list
+                        .c-map-list__header.d-none.d-xl-block Инфраструктура
+                        ul.row.c-map-list__list
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Прогулки и парки',
+                                    count: 4,
+                                    svg: {
+                                        name: 'infrastructure-1',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Банки и обмены валют',
+                                    count: 9,
+                                    svg: {
+                                        name: 'infrastructure-2',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Рестораны и кафе',
+                                    count: 10,
+                                    svg: {
+                                        name: 'infrastructure-3',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Спортивные центры',
+                                    count: 7,
+                                    svg: {
+                                        name: 'infrastructure-4',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Продуктовые магазины',
+                                    count: 12,
+                                    svg: {
+                                        name: 'infrastructure-5',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Медицинские учреждения',
+                                    count: 5,
+                                    svg: {
+                                        name: 'infrastructure-6',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                            li.col-auto.col-xl-12.c-map-list__item
+                                +mapItem({
+                                    title: 'Платные парковки',
+                                    count: 2,
+                                    svg: {
+                                        name: 'infrastructure-7',
+                                        className: 'c-map-item__icon-ico',
+                                        width: 38,
+                                        height: 40
+                                    }
+                                })
+                .c-map-guide__right.d-none.d-xl-block
+                    .c-map-suggestions
+                        .c-map-suggestions__header Чем заняться в обед?
+                        .c-map-suggestions__list
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Покататься на велосипеде в парке', img: 'suggestion-1.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({
+                                    title: 'Поиграть в бильярд или сходить в тир',
+                                    img: 'suggestion-2.jpg'
+                                })
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
+                            .c-map-suggestions__item
+                                +suggestionItem({title: 'Окунуться в виртуальную реальность', img: 'suggestion-3.jpg'})
+mixin feedbackForm()
+    .c-section.c-section_lg
+        .container
+            form.c-form.c-form_primary.c-form_feedback
+                .row.c-form__body.align-items-end
+                    .col-12.c-form__header
+                        .c-feedback-form-header Заинтересованы?
+                            .c-feedback-form-header__phone +7 (846) 372-72-72
+                    .col-12.col-xl-6.c-form__fields
+                        .row
+                            .col-12.col-xl-6
+                                .c-form__field.c-input-wrap.c-input-wrap_lg.c-input-wrap_anim-label
+                                    input.w-100.c-input-wrap__input.c-input.c-input_primary.c-input_size-md(name='name')(id='name' required='' type='text')
+                                    label.c-input-wrap__label(for='name') Ваше имя
+                            .col-12.col-xl-6
+                                .c-form__field.c-input-wrap.c-input-wrap_lg.c-input-wrap_anim-label
+                                    input.w-100.c-input-wrap__input.c-input.c-input_primary.c-input_size-md(name='mobile' id='mobile' required='' type='number')
+                                    label.c-input-wrap__label(for='mobile') Ваш телефон
+                    .col-12.col-xl-6.c-form__controls
+                        .row.align-items-center.justify-content-between
+                            .col-12.col-xl-auto
+                                button.c-btn.c-btn_feedback-submit.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_sm(type='submit') перезвоните мне
+                            .col-12.col-xl-auto
+                                .c-checkbox-primary
+                                    input#example-checkbox.c-checkbox.c-checkbox_primary(type='checkbox' required='')
+                                    label.c-label.mb-0(for='example-checkbox') Я согласен на обработку моих персональных данных
+mixin offices()
+    .c-card-section(style="background-image:url(images/bg-arenda.jpg)")
+        +actionCard({text: 'Аренда офисов <br> от 10 м2 до 1350 м <sup>2</sup>', btnText: 'выбрать сейчас'})
+mixin feedback()
+    .c-section.c-section_lg.u-bg-primary
+        .container
+            .c-section__header
+                .row.c-slider-header
+                    .col-6.col-xl-10.c-slider-header__title.u-color-light Отзывы клиентов
+                    .col-6.col-xl-2.c-slider-header__nav
+                        .c-slider-nav
+            .slider-container
+                .slider.slider_feedback(data-slider='feedback')
+                    .slide
+                        .c-feedback-slide
+                            .c-feedback-slide__logo
+                                img(src='images/fb-logo_1.png')
+                            .c-feedback-slide__text «Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»
+                    .slide
+                        .c-feedback-slide
+                            .c-feedback-slide__logo
+                                img(src='images/fb-logo_2.png')
+                            .c-feedback-slide__text «Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»
+                    .slide
+                        .c-feedback-slide
+                            .c-feedback-slide__logo
+                                img(src='images/fb-logo_3.png')
+                            .c-feedback-slide__text «Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»
+                    .slide
+                        .c-feedback-slide
+                            .c-feedback-slide__logo
+                                img(src='images/fb-logo_4.png')
+                            .c-feedback-slide__text «Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет. За это время мы имели возможность оценить не только качество помещений и инженерных решений, удобное расположение и транспортную доступность, но и высокий профессиональный уровень сотрудников арендодателя, позволяющий оперативно решать любые вопросы»
+            .container
+                .c-feedback
+                    +tabList2([
+                        {text: 'images/fb-logo_1.png', href: '#'},
+                        {text: 'images/fb-logo_2.png', href: '#'},
+                        {text: 'images/fb-logo_3.png', href: '#'},
+                        {text: 'images/fb-logo_4.png', href: '#'},
+                        {text: 'images/fb-logo_5.png', href: '#'},
+                        {text: 'images/fb-logo_6.png', href: '#'}])
+                    .c-feedback__text
+                        | «Офис компании Asset располагается в офисном центре «РДЦ» более восьми лет.
+                        br
+                        | За это время мы имели возможность оценить не только качество помещений и
+                        br
+                        | инженерных решений, удобное расположение и транспортную доступность, но и
+                        br
+                        | высокий профессиональный уровень сотрудников арендодателя, позволяющий
+                        br
+                        | оперативно решать любые вопросы»
+                    .c-feedback__author
+                        | Александр Вейлер
+                        br
+                        | Генеральный директор
+                        br
+                        | ООО «Asset»
+            .c-section__footer
+                a.c-btn.c-btn_size-lg.c-btn_color-light.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_md(href='#') Показать все отзывы
+
+mixin transport()
+    .c-section.c-section_lg.u-bg-secondary.u-color-light.u-overflow-hidden.c-decor-wrap(style='background-image:url(images/transport-bg.jpg)')
+        .container
+            .c-section__header Транспортная доступность
+            .row
+                .col-12.col-xl-6.transport-desc
+                    | Бизнес-центр «Региональный Деловой Центр» расположен в престижном Октябрьском районе г. Самары по адресу: Московское шоссе,
+                    br
+                    br
+                    | д. 41 Рядом с РДЦ пролегают основные транспортные артерии города: Московское шоссе, ул. Авроры, ул. Советской Армии, ул. Ново-Садовая, ул. Стара-Загора. Удобное расположение в географическом и деловом центре города обеспечивает перспективное бизнес-окружение. Бизнес-центр также имеет прямой доступ к историческим и промышленным районам города, междугороднему автовокзалу и международному аэропорту Курумоч.
+        .c-decor-container
+            img.c-decor.c-decor_transport(src='images/decor-map.png')
+        .container
+            .c-distance-list
+                .c-distance-list__item
+                    .c-distance-graph.c-distance-graph_one
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 1. До Автовокзала
+                            .c-line
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
+                        .c-distance-graph__distance 0,7 км
+                .c-distance-list__item
+                    .c-distance-graph.c-distance-graph_two
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 2. До пляжа у «Ладьи»
+                            .c-line.c-line_1
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
+                        .c-distance-graph__distance 5,7 км
+                .c-distance-list__item
+                    .c-distance-graph.c-distance-graph_three
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 3. До ЖД вокзала
+                            .c-line.c-line_2
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
+                        .c-distance-graph__distance 7,6 км
+                .c-distance-list__item
+                    .c-distance-graph
+                        .c-distance-graph__graph
+                            .c-distance-graph__title 4. До Аэропорта «Курумоч»
+                            .c-line.c-line_3
+                                .c-line__line
+                                +svgSprite({
+                                    name: 'triangle',
+                                    className: 'c-line__icon',
+                                    width: 20,
+                                    height: 20
+                                })
+                        .c-distance-graph__distance 46 км

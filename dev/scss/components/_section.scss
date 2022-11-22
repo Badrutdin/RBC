@@ -140,3 +140,28 @@
     min-height: 930px;
   }
 }
+
+
+.c-card-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 556px;
+}
+
+@media (min-width: $bp-xl) {
+  .c-card-section {
+    min-height: 662px;
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-card-section {
+    min-height: 930px;
+  }
+}

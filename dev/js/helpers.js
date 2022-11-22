@@ -25,6 +25,7 @@ function routHelper(pages) {
 }
 $(document).ready(function () {
     routHelper([
-        'authorization'
+        'news',
+        'about'
     ])
 })

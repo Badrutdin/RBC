@@ -5,3 +5,133 @@
   border: none;
   width: 100%;
 }
+
+.c-input.c-input_primary {
+  border-bottom: 2px solid $color-primary;
+}
+
+.c-input_size-md {
+  height: 32px;
+}
+
+@media (min-width: $bp-xxl) {
+  .c-input_size-md {
+    height: 46px;
+  }
+}
+
+.c-label {
+  font-family: $font-secondary;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* hide */
+.c-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* label */
+.c-checkbox-primary .c-checkbox + .c-label::before {
+  content: '';
+  flex-shrink: 0;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 2px solid $color-primary;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 12px;
+}
+
+
+/* focus */
+.c-checkbox-primary .c-checkbox:focus + .c-label::before {
+  border-color: $color-primary;
+  transition: border .2s ease-in-out;
+}
+
+/* checked */
+.c-checkbox-primary .c-checkbox:checked + .c-label::before {
+  border-color: $color-primary;
+  border-width: 8px;
+}
+
+/*disabled */
+.c-checkbox-primary .c-checkbox:disabled + .c-label {
+  color: #C0CBD7;
+}
+
+.c-checkbox-primary.c-checkbox-primary_default .c-checkbox + .c-label::before {
+  margin-right: 14px;
+}
+
+.c-checkbox-primary .c-checkbox:disabled + .c-label::before {
+  background-color: rgba($color-dark, .2);
+  border-color: $color-dark;
+}
+
+/*disabled checked*/
+.c-checkbox-primary .c-checkbox:disabled:checked + .c-label::before {
+  background-color: rgba($color-dark, .2);
+  border-color: $color-dark;
+}
+
+.c-input-wrap {
+  position: relative;
+
+  &__label {
+    font-size: 16px;
+  }
+
+  &_anim-label {
+    .c-input-wrap__label {
+      pointer-events: none;
+      position: absolute;
+      background-color: $color-light;
+      transition: transform .2s ease-in-out;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.c-input-wrap_changed {
+      .c-input-wrap__label {
+        transform: translateY(-200%);
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .c-label {
+    font-size: 12px;
+  }
+  .c-checkbox-primary .c-checkbox + .c-label::before {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+  }
+}
+@media (min-width: $bp-xxl) {
+  .c-label {
+    font-size: 16px;
+  }
+  .c-checkbox-primary .c-checkbox + .c-label::before {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: $bp-xxl) {
+  .c-input-wrap {
+    &__label {
+      font-size: 20px;
+    }
+  }
+}
+
