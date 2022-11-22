@@ -1,39 +1,25 @@
 extends ../pug/layout
 append content
-    .container.mt-5
-        +breadCrumbs({value:'Новости'},{value:'В РДЦ появились свободные торговые площади и офисы для аренды.'})
-        .c-section.c-section_lg
-            .c-news-detail
-                .c-news-detail__body
-                    .c-news-detail__header
-                        .c-news-detail__title В РДЦ появились свободные торговые площади и офисы для аренды
-                        +newsInfo(models.newsCardModel.info)
-                    .row.c-news-detail__inner
-                        .col-12.col-xl-6
-                            .c-news-detail__preview(style='background-image:url(images/news-card-bg.jpg)')
-                        .col-12.col-xl-6
-                            .c-news-detail__desc
-                                | Торговый остров – 4-5 кв.м., 1 этаж.
-                                br
-                                | Торгово-офисное – 28,6 кв.м., цоколь.
-                                br
-                                | Офис 32,6 кв.м.-4 этаж,
-                                br
-                                | Офис 126,1 кв.м. – 4 этаж,
-                                br
-                                | Офис 17,3 кв.м. – 5 этаж,
-                                br
-                                | Офис 59,2 кв.м. – 7 этаж,
-                                br
-                                br
-                                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_sm.w-auto(href='#') перейти в аренду офисов
-                    .col-12
-                        .c-news-detail__footer
-                            a(href='#') К списку новостей
-    +offices()
-
-    +feedbackForm()
-
-
-
+    .c-section.c-section_lg
+        .container
+            .c-section__header
+                +tabList(models.tabListModel)
+            .row.c-card-news-list
+                .col-12.col-md-6.c-card-news-list__item
+                    +newsCardPrimary(models.newsCardModel)
+                .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                    +newsCardSecondary(models.newsCardModel)
+                .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                    +newsCardSecondary(models.newsCardModel)
+                .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                    +newsCardSecondary(models.newsCardModel)
+                .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                    +newsCardSecondary(models.newsCardModel)
+                .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                    +newsCardSecondary(models.newsCardModel)
+                .col-12.col-md-6.col-lg-3.c-card-news-list__item
+                    +newsCardSecondary(models.newsCardModel)
+        .container
+            .c-section__footer
+                a.c-btn.c-btn_size-lg.c-btn_color-primary.c-btn_style-default.c-btn_style-bold-upper.c-btn_section-control_sm(href='#') Загрузить еще новости
 
